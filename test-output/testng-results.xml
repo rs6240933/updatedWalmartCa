@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-21T22:26:46 IST" name="Suite" finished-at="2023-09-21T22:27:59 IST" duration-ms="73224">
+    <groups>
+    </groups>
+    <test started-at="2023-09-21T22:26:46 IST" name="Test" finished-at="2023-09-21T22:27:59 IST" duration-ms="73224">
+      <class name="WalmartCaTest.OnboardTest">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@5c86a017]" started-at="2023-09-21T22:26:46 IST" name="VerifyStep1Link" finished-at="2023-09-21T22:27:59 IST" duration-ms="73142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyStep1Link -->
+      </class> <!-- WalmartCaTest.OnboardTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
