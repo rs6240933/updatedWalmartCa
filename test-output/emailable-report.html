@@ -9,10 +9,51 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">73,224</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">14</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">154,592</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">WalmartCaTest.OnboardTest</td><td><a href="#m0">VerifyStep1Link</a></td><td rowspan="1">1695315406172</td><td rowspan="1">73142</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">WalmartCaTest.OnboardTest</td><td><a href="#m0">selectCollection</a></td><td rowspan="1">1695487646734</td><td rowspan="1">49066</td></tr><tr class="failedeven"><td><a href="#m1">selectProductType</a></td><td rowspan="1">1695487638446</td><td rowspan="1">4269</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="14">WalmartCaTest.OnboardTest</td><td><a href="#m2">BothInvalid</a></td><td rowspan="1">1695487623654</td><td rowspan="1">3738</td></tr><tr class="passedeven"><td><a href="#m3">BothValid</a></td><td rowspan="1">1695487627394</td><td rowspan="1">6576</td></tr><tr class="passedeven"><td><a href="#m4">ClickOnApplyFilter</a></td><td rowspan="1">1695487635725</td><td rowspan="1">2718</td></tr><tr class="passedeven"><td><a href="#m5">IfConsumeridIsgiven</a></td><td rowspan="1">1695487616540</td><td rowspan="1">3554</td></tr><tr class="passedeven"><td><a href="#m6">IfSecretKeyIsgiven</a></td><td rowspan="1">1695487620098</td><td rowspan="1">3552</td></tr><tr class="passedeven"><td><a href="#m7">ImportOptionVisible</a></td><td rowspan="1">1695487633973</td><td rowspan="1">1749</td></tr><tr class="passedeven"><td><a href="#m8">SellerCenterClickable</a></td><td rowspan="1">1695487611633</td><td rowspan="1">4898</td></tr><tr class="passedeven"><td><a href="#m9">VerifyClickHereLink</a></td><td rowspan="1">1695487597987</td><td rowspan="1">3126</td></tr><tr class="passedeven"><td><a href="#m10">VerifyStep1Link</a></td><td rowspan="1">1695487541300</td><td rowspan="1">56664</td></tr><tr class="passedeven"><td><a href="#m11">checkCheckBox</a></td><td rowspan="1">1695487608085</td><td rowspan="1">2522</td></tr><tr class="passedeven"><td><a href="#m12">readMoreClickable</a></td><td rowspan="1">1695487610612</td><td rowspan="1">1010</td></tr><tr class="passedeven"><td><a href="#m13">selectProductVendor</a></td><td rowspan="1">1695487642736</td><td rowspan="1">3990</td></tr><tr class="passedeven"><td><a href="#m14">uncheckCheckBox</a></td><td rowspan="1">1695487604201</td><td rowspan="1">3879</td></tr><tr class="passedeven"><td><a href="#m15">verifyContactUS</a></td><td rowspan="1">1695487601119</td><td rowspan="1">3074</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">WalmartCaTest.OnboardTest#VerifyStep1Link</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">WalmartCaTest.OnboardTest#selectCollection</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Collection options are not showing expected [true] but found [false]
+	at WalmartCaTest.OnboardTest.selectCollection(OnboardTest.java:165)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">WalmartCaTest.OnboardTest#selectProductType</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;javascript:void(0)&quot; onclick=&quot;cedProductImport.getFilterLayout(this)&quot; id=&quot;ced_fetch_by_link&quot; data-value=&quot;product_type&quot;&gt;...&lt;/a&gt; is not clickable at point (336, 534). Other element would receive the click: &lt;div class=&quot;Polaris-ButtonGroup&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=114.0.5735.199)
+Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [60152c8ed296a36b5356b8e55e84fa5f, clickElement {id=C1F34327A1331C77135D2A347A230339_element_487}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\Rishabh\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:56631}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56631/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (60152c8ed296a36b5356b8e55e84fa5f)] -&gt; id: ced_fetch_by_link]
+Session ID: 60152c8ed296a36b5356b8e55e84fa5f
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at WalmartCa.webutility.utilities.ElementClick(utilities.java:24)
+	at WalmartCa.PageObjects.OnboardStep2Object.optionTobeFetch(OnboardStep2Object.java:101)
+	at WalmartCa.PageObjects.OnboardStep2Object.selectProductType(OnboardStep2Object.java:88)
+	at WalmartCaTest.OnboardTest.selectProductType(OnboardTest.java:149)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">WalmartCaTest.OnboardTest#BothInvalid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">WalmartCaTest.OnboardTest#BothValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">WalmartCaTest.OnboardTest#ClickOnApplyFilter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">WalmartCaTest.OnboardTest#IfConsumeridIsgiven</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">WalmartCaTest.OnboardTest#IfSecretKeyIsgiven</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">WalmartCaTest.OnboardTest#ImportOptionVisible</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">WalmartCaTest.OnboardTest#SellerCenterClickable</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">WalmartCaTest.OnboardTest#VerifyClickHereLink</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">WalmartCaTest.OnboardTest#VerifyStep1Link</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">WalmartCaTest.OnboardTest#checkCheckBox</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">WalmartCaTest.OnboardTest#readMoreClickable</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">WalmartCaTest.OnboardTest#selectProductVendor</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">WalmartCaTest.OnboardTest#uncheckCheckBox</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">WalmartCaTest.OnboardTest#verifyContactUS</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

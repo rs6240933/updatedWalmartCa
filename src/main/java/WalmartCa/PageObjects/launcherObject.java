@@ -22,7 +22,7 @@ public class launcherObject {
 	WebDriver driver;
 	Baseclass base;
 	WebDriverWait wait;
-	public void launchApplication() throws InterruptedException, IOException {
+	public OnboardStep1Object launchApplication() throws InterruptedException, IOException {
 		this.base = new Baseclass();
 		this.driver = base.InitializeBrowser();
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -33,6 +33,8 @@ public class launcherObject {
 			Listeners.test.log(Status.INFO, "Store launched");
 			runonOldStore(base.store, base.pass, base.storeName);
 		}
+		OnboardStep1Object obj = new OnboardStep1Object(driver);
+		return obj;
 	}
 	
 	public void runonNewStore(String store, String pass, String storeName) throws InterruptedException {
