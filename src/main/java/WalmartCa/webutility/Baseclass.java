@@ -37,7 +37,7 @@ public class Baseclass {
 		storeName = prop.getProperty("storeName");
 
 		if (broswername.equalsIgnoreCase("chrome")) {
-//				WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			this.driverr = new ChromeDriver();
 			driverr.manage().window().maximize();
 
