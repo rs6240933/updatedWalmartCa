@@ -8,7 +8,21 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
+          <include name="selectProductVendor"/>
+          <include name="IfConsumeridIsgiven"/>
           <include name="selectProductType"/>
+          <include name="verifyContactUS"/>
+          <include name="SellerCenterClickable"/>
+          <include name="readMoreClickable"/>
+          <include name="checkCheckBox"/>
+          <include name="VerifyStep1Link"/>
+          <include name="BothInvalid"/>
+          <include name="ClickOnApplyFilter"/>
+          <include name="uncheckCheckBox"/>
+          <include name="VerifyClickHereLink"/>
+          <include name="BothValid"/>
+          <include name="IfSecretKeyIsgiven"/>
+          <include name="ImportOptionVisible"/>
           <include name="selectCollection"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
