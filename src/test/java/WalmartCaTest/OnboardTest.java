@@ -158,7 +158,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "ProductVendor options are not showing");
 		}
 	}
-	@Test(priority = 16)// This is final test for  test
+	@Test(priority = 16)// resolved issues
 	public void selectCollection() throws InterruptedException {
 		ArrayList<WebElement> AllOptions = obj2.selectCollection();
 		if(AllOptions.size() == 0) {
