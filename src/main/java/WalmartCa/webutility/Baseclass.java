@@ -37,8 +37,9 @@ public class Baseclass {
 		storeName = prop.getProperty("storeName");
 
 		if (broswername.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
+//			WebDriverManager.chromedriver().setup();
 			this.driverr = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 			driverr.manage().window().maximize();
 
 		}
@@ -51,6 +52,7 @@ public class Baseclass {
 		Listeners.test.log(Status.INFO, "Browser launched");
 		return driverr;
 	}
+
 	public static ExtentReports configReport() {
 		// ExtentReports and ExtentSparkReporter
 		String path = System.getProperty("user.dir") + "//reports//index.html";
