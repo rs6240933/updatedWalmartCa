@@ -183,7 +183,7 @@ public class OnboardStep2Object extends utilities {
 		return openImportModal();
 	}
 
-	public void Import(int i) throws InterruptedException {
+	public ArrayList<WebElement> Import(int i) throws InterruptedException {
 		refresh();
 		ArrayList<WebElement> dropdownOpt = openDropdown();
 		dropdownOpt.get(3).click();
@@ -197,10 +197,11 @@ public class OnboardStep2Object extends utilities {
 		ElementClick(fetched, "clicked on fetched option");
 		ArrayList<WebElement> AllOptions = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		AllOptions.get(0).click();
+		return AllOptions;
 	}
 
 	public String ImportBytype(int x) throws InterruptedException {
-		Import(x);
+		ArrayList<WebElement> AllOptions = Import(x);
 		dropdown.click();
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
@@ -208,16 +209,18 @@ public class OnboardStep2Object extends utilities {
 	}
 
 	public String ImportByVendor(int x) throws InterruptedException {
-		Import(x);
+		ArrayList<WebElement> = Import(x);
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
 	}
 
 	public String ImportBycollection(int x) throws InterruptedException {
-		Import(x);
+		ArrayList<WebElement> = Import(x);
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
 	}
+	
+	
 }

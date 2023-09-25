@@ -146,21 +146,21 @@ public class OnboardTest extends Baseclass {
 
 	@Test(priority = 14)
 	public void selectProductType() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectProductType();
+		ArrayList<WebElement> AllOptions = obj2.Import(0);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "ProductType options are not showing");
 		}
 	}
 	@Test(priority = 15)
 	public void selectProductVendor() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectProductVendor();
+		ArrayList<WebElement> AllOptions = obj2.Import(1);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "ProductVendor options are not showing");
 		}
 	}
 	@Test(priority = 16)
 	public void selectCollection() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectCollection();
+		ArrayList<WebElement> AllOptions = obj2.Import(2);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "Collection options are not showing");
 		}
