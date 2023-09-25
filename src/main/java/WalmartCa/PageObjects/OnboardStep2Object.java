@@ -31,6 +31,11 @@ public class OnboardStep2Object extends utilities {
 	WebElement fetch;
 	By fetched = By.id("ced_fetch_by_link");
 	By fetchoptions = By.xpath("//ul[@id='select2-ced_import_select2_value-results']/li");
+	By AlldropdownOptions = By.xpath("//select[@id='ced-product-import']/option");
+	By Modal = By.id("modal-header");
+	By importButton = By.xpath("(//div[@class='Polaris-FormLayout'])[3]/div/button");
+	@FindBy(css = "div[id='modal-header'] h2")
+	WebElement ModalHeader;
 
 	OnboardStep2Object(WebDriver driver) {
 		super(driver);
@@ -51,8 +56,7 @@ public class OnboardStep2Object extends utilities {
 
 	public ArrayList<WebElement> openDropdown() {
 		dropdown.click();
-		ArrayList<WebElement> options = new ArrayList<WebElement>(
-				driver.findElements(By.xpath("//select[@id='ced-product-import']/option")));
+		ArrayList<WebElement> options = new ArrayList<WebElement>(driver.findElements(AlldropdownOptions));
 		for (int i = 0; i < options.size(); i++) {
 
 			Listeners.test.log(Status.INFO, options.get(i).getText());
@@ -97,9 +101,15 @@ public class OnboardStep2Object extends utilities {
 		Actions ac = new Actions(driver);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,250)");
-		WaitforElementClickable(fetched);
+		waitforClickable(fetched);
 		ElementClick(fetched, "clicked on fetched option");
 		WaittillvisibilityOfElementLocated(fetchoptions);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ArrayList<WebElement> AllOptions = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		return AllOptions;
 
@@ -127,4 +137,90 @@ public class OnboardStep2Object extends utilities {
 		return AllOption;
 	}
 
+	public String ClickPublishProductImport(int optionToClick) {
+		try {
+			refresh();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		dropdown.click();
+		ArrayList<WebElement> options = openDropdown();
+		options.get(optionToClick).click();
+		Listeners.test.log(Status.INFO, "Clicked On " + options.get(optionToClick).getText());
+		return openImportModal();
+	}
+
+	public String openImportModal() {
+		WaittillvisibilityOfElementLocated(Modal);
+		Listeners.test.log(Status.PASS, "Modal Opened");
+		return ModalHeader.getText();
+	}
+
+	public String ModalOpenBycollection() throws InterruptedException {
+		ArrayList<WebElement> AllOption = selectCollection();
+		AllOption.get(0).click();
+		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+
+	public String ModalOpenByvendor() throws InterruptedException {
+		ArrayList<WebElement> AllOption = selectProductVendor();
+		AllOption.get(0).click();
+		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+
+	public String ModalOpenBytype() throws InterruptedException {
+		ArrayList<WebElement> AllOption = selectProductType();
+		AllOption.get(0).click();
+		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
+		dropdown.click();
+		waitforClickable(importButton);
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+
+	public ArrayList<WebElement> Import(int i) throws InterruptedException {
+		refresh();
+		ArrayList<WebElement> dropdownOpt = openDropdown();
+		dropdownOpt.get(3).click();
+		ArrayList<WebElement> fiteropts = new ArrayList<WebElement>(driver.findElements(applyFilteroptions));
+		fiteropts.get(i).click();
+		Listeners.test.log(Status.INFO, fiteropts.get(i).getText());
+		Actions ac = new Actions(driver);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)");
+		waitforClickable(fetched);
+		ElementClick(fetched, "clicked on fetched option");
+		ArrayList<WebElement> AllOptions = new ArrayList<WebElement>(driver.findElements(fetchoptions));
+		AllOptions.get(0).click();
+		return AllOptions;
+	}
+
+	public String ImportBytype(int x) throws InterruptedException {
+		ArrayList<WebElement> AllOptions = Import(x);
+		dropdown.click();
+		waitforClickable(importButton);
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+
+	public String ImportByVendor(int x) throws InterruptedException {
+		ArrayList<WebElement> = Import(x);
+		waitforClickable(importButton);
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+
+	public String ImportBycollection(int x) throws InterruptedException {
+		ArrayList<WebElement> = Import(x);
+		waitforClickable(importButton);
+		ElementClick(importButton, "Clicked on start import Button");
+		return openImportModal();
+	}
+	
+	
 }

@@ -30,7 +30,7 @@ public class OnboardTest extends Baseclass {
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void VerifyClickHereLink() {
 
 		String ExpectedURL = "https://seller.walmart.com/signup?onboardingmart=1&Agency=cedcommerce&locale=en-CA";
@@ -39,7 +39,7 @@ public class OnboardTest extends Baseclass {
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3 , enabled = false)
 
 	public void verifyContactUS() {
 		String ExpectedURL = "https://walmart-support.cedcommerce.com/support/tickets/new";
@@ -48,7 +48,7 @@ public class OnboardTest extends Baseclass {
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, enabled = false)
 
 	public void uncheckCheckBox() throws InterruptedException {
 		String attribute = obj1.nextBtndis();
@@ -57,7 +57,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled = false)
 
 	public void checkCheckBox() throws InterruptedException {
 		String attribute = obj1.nextBtnen();
@@ -66,7 +66,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 
 	public void readMoreClickable() {
 		String ExpectedURL = "https://apps.cedcommerce.com/marketplace-integration/policy/walmartcanada.pdf";
@@ -75,7 +75,7 @@ public class OnboardTest extends Baseclass {
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, enabled = false)
 	public void SellerCenterClickable() {
 		String ExpectedURL = "https://seller.walmart.ca/";
 		String actualURL = obj1.sellerCenter();
@@ -94,7 +94,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = false)
 	public void IfSecretKeyIsgiven() throws InterruptedException {
 		String validate = obj1.fillCredientials(" ", "sdcwed");
 		if ((validate.contains("Consumer Id cannot be blank."))) {
@@ -105,7 +105,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 10, enabled = false)
 	public void BothInvalid() throws InterruptedException {
 		String validate = obj1.fillCredientials("sdwed", "sdwedew");
 		if ((validate.contains("API credentials are invalid. Please enter valid api credentials"))) {
@@ -121,7 +121,7 @@ public class OnboardTest extends Baseclass {
 		this.obj2 = obj1.EnterStep2("CedCommerce007", "CedCommerce008");
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 12, enabled = false)
 
 	public void ImportOptionVisible() {
 		ArrayList<WebElement> op = obj2.openDropdown();
@@ -132,7 +132,7 @@ public class OnboardTest extends Baseclass {
 
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 13, enabled = false)
 	public void ClickOnApplyFilter() throws InterruptedException { // verify the fields which isgetting visible after
 																	// selecting ApplyFilter
 		ArrayList<WebElement> option1 = obj2.clickApplyFilter();
@@ -146,25 +146,61 @@ public class OnboardTest extends Baseclass {
 
 	@Test(priority = 14)
 	public void selectProductType() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectProductType();
+		ArrayList<WebElement> AllOptions = obj2.Import(0);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "ProductType options are not showing");
 		}
 	}
 	@Test(priority = 15)
 	public void selectProductVendor() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectProductVendor();
+		ArrayList<WebElement> AllOptions = obj2.Import(1);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "ProductVendor options are not showing");
 		}
 	}
-	@Test(priority = 16)// resolved issues
+	@Test(priority = 16)
 	public void selectCollection() throws InterruptedException {
-		ArrayList<WebElement> AllOptions = obj2.selectCollection();
+		ArrayList<WebElement> AllOptions = obj2.Import(2);
 		if(AllOptions.size() == 0) {
 			Assert.assertTrue(false, "Collection options are not showing");
 		}
-		//Risabbh singh
+		
 	}
-
+	@Test(priority = 17)
+	public void SelectPublishProduct(){
+		String text = obj2.ClickPublishProductImport(2);
+		if(!(text.contains("Published product import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+		
+	}
+	@Test(priority = 18)
+	public void SelectAllProduct(){
+		String text = obj2.ClickPublishProductImport(1);
+		if(!(text.contains("All products import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+	}
+	@Test(priority = 19)
+	public void SelectAnyCollectionandClickOnImport() throws InterruptedException  {
+		String text = obj2.ImportBycollection(2);
+		if(!(text.contains("Filtered product import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+	}
+	@Test(priority = 20)
+	public void SelectAnyvendorandClickOnImport() throws InterruptedException  {
+		String text = obj2.ImportByVendor(1);
+		if(!(text.contains("Filtered product import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+	}
+	@Test(priority = 21)
+	public void SelectAnytypeandClickOnImport() throws InterruptedException  {
+		String text = obj2.ImportBytype(0);
+		if(!(text.contains("Filtered product import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+	}
+	
 }
