@@ -9,16 +9,7 @@
       <class name="WalmartCaTest.OnboardTest">
         <methods>
           <include name="SelectAnyvendorandClickOnImport"/>
-          <include name="VerifyStep1Link"/>
-          <include name="selectProductVendor"/>
-          <include name="SelectAnytypeandClickOnImport"/>
-          <include name="SelectAllProduct"/>
-          <include name="IfConsumeridIsgiven"/>
-          <include name="selectProductType"/>
           <include name="SelectAnyCollectionandClickOnImport"/>
-          <include name="SelectPublishProduct"/>
-          <include name="BothValid"/>
-          <include name="selectCollection"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>

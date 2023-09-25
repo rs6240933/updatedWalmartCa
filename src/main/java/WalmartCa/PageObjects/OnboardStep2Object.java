@@ -209,14 +209,14 @@ public class OnboardStep2Object extends utilities {
 	}
 
 	public String ImportByVendor(int x) throws InterruptedException {
-		ArrayList<WebElement> = Import(x);
+		ArrayList<WebElement> AllOptions= Import(x);
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
 	}
 
 	public String ImportBycollection(int x) throws InterruptedException {
-		ArrayList<WebElement> = Import(x);
+		ArrayList<WebElement> AllOptions= Import(x);
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
