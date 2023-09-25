@@ -195,7 +195,9 @@ public class OnboardStep2Object extends utilities {
 		jse.executeScript("window.scrollBy(0,250)");
 		waitforClickable(fetched);
 		ElementClick(fetched, "clicked on fetched option");
+		WaittillvisibilityOfElementLocated(fetchoptions);
 		ArrayList<WebElement> AllOptions = new ArrayList<WebElement>(driver.findElements(fetchoptions));
+		waitforClickable(fetchoptions);
 		AllOptions.get(0).click();
 		return AllOptions;
 	}

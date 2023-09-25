@@ -8,8 +8,7 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
-          <include name="SelectAnyvendorandClickOnImport"/>
-          <include name="SelectAnyCollectionandClickOnImport"/>
+          <include name="selectCollection"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>

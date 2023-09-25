@@ -1,139 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="9" failed="2" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-25T21:11:21 IST" name="Suite" finished-at="2023-09-25T21:13:43 IST" duration-ms="142055">
+  <suite started-at="2023-09-25T21:23:51 IST" name="Suite" finished-at="2023-09-25T21:26:20 IST" duration-ms="148392">
     <groups>
     </groups>
-    <test started-at="2023-09-25T21:11:21 IST" name="Test" finished-at="2023-09-25T21:13:43 IST" duration-ms="142055">
+    <test started-at="2023-09-25T21:23:51 IST" name="Test" finished-at="2023-09-25T21:26:20 IST" duration-ms="148392">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:11:22 IST" name="VerifyStep1Link" finished-at="2023-09-25T21:12:10 IST" duration-ms="48110" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:23:52 IST" name="VerifyStep1Link" finished-at="2023-09-25T21:24:53 IST" duration-ms="61373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="IfConsumeridIsgiven()[pri:8, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:12:10 IST" name="IfConsumeridIsgiven" finished-at="2023-09-25T21:12:14 IST" duration-ms="4483" status="PASS">
+        <test-method signature="IfConsumeridIsgiven()[pri:8, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:24:53 IST" name="IfConsumeridIsgiven" finished-at="2023-09-25T21:24:56 IST" duration-ms="3353" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IfConsumeridIsgiven -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:12:14 IST" name="BothValid" finished-at="2023-09-25T21:12:21 IST" duration-ms="6493" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:24:56 IST" name="BothValid" finished-at="2023-09-25T21:25:03 IST" duration-ms="6611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="selectProductType()[pri:14, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:12:21 IST" name="selectProductType" finished-at="2023-09-25T21:13:26 IST" duration-ms="65743" status="PASS">
+        <test-method signature="selectProductType()[pri:14, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:03 IST" name="selectProductType" finished-at="2023-09-25T21:25:52 IST" duration-ms="49155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectProductType -->
-        <test-method signature="selectProductVendor()[pri:15, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:26 IST" name="selectProductVendor" finished-at="2023-09-25T21:13:31 IST" duration-ms="4188" status="PASS">
+        <test-method signature="selectProductVendor()[pri:15, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:52 IST" name="selectProductVendor" finished-at="2023-09-25T21:25:56 IST" duration-ms="4131" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectProductVendor -->
-        <test-method signature="selectCollection()[pri:16, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:31 IST" name="selectCollection" finished-at="2023-09-25T21:13:34 IST" duration-ms="3723" status="PASS">
+        <test-method signature="selectCollection()[pri:16, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:56 IST" name="selectCollection" finished-at="2023-09-25T21:26:00 IST" duration-ms="3950" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectCollection -->
-        <test-method signature="SelectPublishProduct()[pri:17, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:34 IST" name="SelectPublishProduct" finished-at="2023-09-25T21:13:37 IST" duration-ms="2908" status="PASS">
+        <test-method signature="SelectPublishProduct()[pri:17, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:00 IST" name="SelectPublishProduct" finished-at="2023-09-25T21:26:03 IST" duration-ms="2552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectPublishProduct -->
-        <test-method signature="SelectAllProduct()[pri:18, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:37 IST" name="SelectAllProduct" finished-at="2023-09-25T21:13:40 IST" duration-ms="2491" status="PASS">
+        <test-method signature="SelectAllProduct()[pri:18, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:03 IST" name="SelectAllProduct" finished-at="2023-09-25T21:26:07 IST" duration-ms="4115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAllProduct -->
-        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:40 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-25T21:13:40 IST" duration-ms="9" status="FAIL">
-          <exception class="java.lang.Error">
-            <message>
-              <![CDATA[Unresolved compilation problem: 
-Syntax error on token ">", VariableDeclaratorId expected after this token
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problem: 
-Syntax error on token ">", VariableDeclaratorId expected after this token
-
-at WalmartCa.PageObjects.OnboardStep2Object.ImportBycollection(OnboardStep2Object.java:219)
-at WalmartCaTest.OnboardTest.SelectAnyCollectionandClickOnImport(OnboardTest.java:186)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:07 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-25T21:26:12 IST" duration-ms="4627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyCollectionandClickOnImport -->
-        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:40 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-25T21:13:40 IST" duration-ms="1" status="FAIL">
-          <exception class="java.lang.Error">
-            <message>
-              <![CDATA[Unresolved compilation problem: 
-Syntax error on token ">", VariableDeclaratorId expected after this token
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problem: 
-Syntax error on token ">", VariableDeclaratorId expected after this token
-
-at WalmartCa.PageObjects.OnboardStep2Object.ImportByVendor(OnboardStep2Object.java:212)
-at WalmartCaTest.OnboardTest.SelectAnyvendorandClickOnImport(OnboardTest.java:193)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:12 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-25T21:26:16 IST" duration-ms="4254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyvendorandClickOnImport -->
-        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:13:40 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-25T21:13:43 IST" duration-ms="3770" status="PASS">
+        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:16 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-25T21:26:20 IST" duration-ms="4069" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnytypeandClickOnImport -->
