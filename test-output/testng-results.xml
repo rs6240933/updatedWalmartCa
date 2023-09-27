@@ -1,53 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-25T21:23:51 IST" name="Suite" finished-at="2023-09-25T21:26:20 IST" duration-ms="148392">
+  <suite started-at="2023-09-26T22:28:11 IST" name="Suite" finished-at="2023-09-26T22:29:42 IST" duration-ms="91880">
     <groups>
     </groups>
-    <test started-at="2023-09-25T21:23:51 IST" name="Test" finished-at="2023-09-25T21:26:20 IST" duration-ms="148392">
+    <test started-at="2023-09-26T22:28:11 IST" name="Test" finished-at="2023-09-26T22:29:42 IST" duration-ms="91880">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:23:52 IST" name="VerifyStep1Link" finished-at="2023-09-25T21:24:53 IST" duration-ms="61373" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:28:11 IST" name="VerifyStep1Link" finished-at="2023-09-26T22:29:13 IST" duration-ms="61853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="IfConsumeridIsgiven()[pri:8, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:24:53 IST" name="IfConsumeridIsgiven" finished-at="2023-09-25T21:24:56 IST" duration-ms="3353" status="PASS">
+        <test-method signature="IfConsumeridIsgiven()[pri:8, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:13 IST" name="IfConsumeridIsgiven" finished-at="2023-09-26T22:29:16 IST" duration-ms="3289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IfConsumeridIsgiven -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:24:56 IST" name="BothValid" finished-at="2023-09-25T21:25:03 IST" duration-ms="6611" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:16 IST" name="BothValid" finished-at="2023-09-26T22:29:24 IST" duration-ms="7824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="selectProductType()[pri:14, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:03 IST" name="selectProductType" finished-at="2023-09-25T21:25:52 IST" duration-ms="49155" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectProductType -->
-        <test-method signature="selectProductVendor()[pri:15, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:52 IST" name="selectProductVendor" finished-at="2023-09-25T21:25:56 IST" duration-ms="4131" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectProductVendor -->
-        <test-method signature="selectCollection()[pri:16, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:25:56 IST" name="selectCollection" finished-at="2023-09-25T21:26:00 IST" duration-ms="3950" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCollection -->
-        <test-method signature="SelectPublishProduct()[pri:17, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:00 IST" name="SelectPublishProduct" finished-at="2023-09-25T21:26:03 IST" duration-ms="2552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectPublishProduct -->
-        <test-method signature="SelectAllProduct()[pri:18, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:03 IST" name="SelectAllProduct" finished-at="2023-09-25T21:26:07 IST" duration-ms="4115" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectAllProduct -->
-        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:07 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-25T21:26:12 IST" duration-ms="4627" status="PASS">
+        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:24 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-26T22:29:33 IST" duration-ms="8910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyCollectionandClickOnImport -->
-        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:12 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-25T21:26:16 IST" duration-ms="4254" status="PASS">
+        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:33 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-26T22:29:37 IST" duration-ms="4548" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyvendorandClickOnImport -->
-        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@d23e042]" started-at="2023-09-25T21:26:16 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-25T21:26:20 IST" duration-ms="4069" status="PASS">
+        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:37 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-26T22:29:42 IST" duration-ms="5315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnytypeandClickOnImport -->

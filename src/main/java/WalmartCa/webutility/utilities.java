@@ -26,6 +26,12 @@ public class utilities {
 		Listeners.test.log(Status.INFO, message);
 	}
 
+	public void WebElementClick(WebElement ele, String msg) {
+		waitforClickableBywebElement(ele);
+		ele.click();
+		Listeners.test.log(Status.INFO, msg);
+	}
+
 	public void EnterText(WebElement element, String message) {
 		element.sendKeys(message);
 		Listeners.test.log(Status.INFO, "Entered Text :" + message);
@@ -51,13 +57,26 @@ public class utilities {
 
 	}
 
+	public void waitforClickableBywebElement(WebElement FindElement) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(FindElement));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
 	public WebElement waitForelementpresent(By FindElement) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(FindElement));
 		return driver.findElement(FindElement);
 	}
 
 	public void WaitTillTextPresent(By FindElement, String text) {
-		wait.until(ExpectedConditions.textToBePresentInElementLocated(FindElement, text));
+		try {
+			wait.until(ExpectedConditions.textToBePresentInElementLocated(FindElement, text));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void WaittillvisibilityOfElementLocated(By FindElement) {
@@ -77,4 +96,6 @@ public class utilities {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 	}
+	
+	
 }

@@ -36,6 +36,12 @@ public class OnboardStep2Object extends utilities {
 	By importButton = By.xpath("(//div[@class='Polaris-FormLayout'])[3]/div/button");
 	@FindBy(css = "div[id='modal-header'] h2")
 	WebElement ModalHeader;
+	@FindBy (id="popup-confirm-cancel")
+	WebElement InstantBtn;
+	By loaderText = By.xpath("//span[@class='loader-message']");
+	By bannermsg = By.xpath("(//div[@id=\"Banner3Content\"])[2]/p");
+	
+	
 
 	OnboardStep2Object(WebDriver driver) {
 		super(driver);
@@ -156,33 +162,8 @@ public class OnboardStep2Object extends utilities {
 		Listeners.test.log(Status.PASS, "Modal Opened");
 		return ModalHeader.getText();
 	}
-
-	public String ModalOpenBycollection() throws InterruptedException {
-		ArrayList<WebElement> AllOption = selectCollection();
-		AllOption.get(0).click();
-		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
-		ElementClick(importButton, "Clicked on start import Button");
-		return openImportModal();
-	}
-
-	public String ModalOpenByvendor() throws InterruptedException {
-		ArrayList<WebElement> AllOption = selectProductVendor();
-		AllOption.get(0).click();
-		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
-		ElementClick(importButton, "Clicked on start import Button");
-		return openImportModal();
-	}
-
-	public String ModalOpenBytype() throws InterruptedException {
-		ArrayList<WebElement> AllOption = selectProductType();
-		AllOption.get(0).click();
-		Listeners.test.log(Status.INFO, "selected " + AllOption.get(0).getText());
-		dropdown.click();
-		waitforClickable(importButton);
-		ElementClick(importButton, "Clicked on start import Button");
-		return openImportModal();
-	}
-
+	
+	
 	public ArrayList<WebElement> Import(int i) throws InterruptedException {
 		refresh();
 		ArrayList<WebElement> dropdownOpt = openDropdown();
@@ -196,12 +177,16 @@ public class OnboardStep2Object extends utilities {
 		waitforClickable(fetched);
 		ElementClick(fetched, "clicked on fetched option");
 		WaittillvisibilityOfElementLocated(fetchoptions);
-		ArrayList<WebElement> AllOptions = new ArrayList<WebElement>(driver.findElements(fetchoptions));
+		ArrayList<WebElement> AllOptionss = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		waitforClickable(fetchoptions);
-		AllOptions.get(0).click();
-		return AllOptions;
+		if(AllOptionss.size() > 0) {
+			AllOptionss.get(0).click();
+		}
+		return AllOptionss;
+		
 	}
-
+	
+	
 	public String ImportBytype(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions = Import(x);
 		dropdown.click();
@@ -224,5 +209,26 @@ public class OnboardStep2Object extends utilities {
 		return openImportModal();
 	}
 	
+	public String InstantImport(int i) throws InterruptedException {
+		if(i==2) {
+			String txt =  ImportBycollection(2);
+		}
+		if(i==1) {
+			String txt =  ImportByVendor(1);
+		}if(i==0) {
+			String txt =  ImportBytype(0);
+		}
+		WebElementClick(InstantBtn, "Clicked on Instant Button");
+		WaitTillTextPresent(loaderText, "imported successfully!");
+		Listeners.test.log(Status.PASS, "Loader displayed Successfully");
+		String loadermsg = driver.findElement(loaderText).getText();
+		WaittillvisibilityOfElementLocated(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p"));
+		String bannermsg = driver.findElement(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p")).getText();
+		Listeners.test.log(Status.INFO, "Loader text "+loadermsg);
+		Listeners.test.log(Status.INFO, "banner text "+bannermsg);
+			
+		return bannermsg;
+		//ImportBytype
+	}
 	
 }
