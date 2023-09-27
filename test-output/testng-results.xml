@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-26T22:28:11 IST" name="Suite" finished-at="2023-09-26T22:29:42 IST" duration-ms="91880">
+  <suite started-at="2023-09-27T22:28:51 IST" name="Suite" finished-at="2023-09-27T22:31:29 IST" duration-ms="157887">
     <groups>
     </groups>
-    <test started-at="2023-09-26T22:28:11 IST" name="Test" finished-at="2023-09-26T22:29:42 IST" duration-ms="91880">
+    <test started-at="2023-09-27T22:28:51 IST" name="Test" finished-at="2023-09-27T22:31:29 IST" duration-ms="157887">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:28:11 IST" name="VerifyStep1Link" finished-at="2023-09-26T22:29:13 IST" duration-ms="61853" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:28:51 IST" name="VerifyStep1Link" finished-at="2023-09-27T22:29:51 IST" duration-ms="59979" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="IfConsumeridIsgiven()[pri:8, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:13 IST" name="IfConsumeridIsgiven" finished-at="2023-09-26T22:29:16 IST" duration-ms="3289" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- IfConsumeridIsgiven -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:16 IST" name="BothValid" finished-at="2023-09-26T22:29:24 IST" duration-ms="7824" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:29:51 IST" name="BothValid" finished-at="2023-09-27T22:29:59 IST" duration-ms="7913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:24 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-26T22:29:33 IST" duration-ms="8910" status="PASS">
+        <test-method signature="selectProductType()[pri:14, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:29:59 IST" name="selectProductType" finished-at="2023-09-27T22:30:08 IST" duration-ms="9169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectProductType -->
+        <test-method signature="selectProductVendor()[pri:15, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:08 IST" name="selectProductVendor" finished-at="2023-09-27T22:30:14 IST" duration-ms="6088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectProductVendor -->
+        <test-method signature="selectCollection()[pri:16, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:14 IST" name="selectCollection" finished-at="2023-09-27T22:30:22 IST" duration-ms="7390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectCollection -->
+        <test-method signature="SelectPublishProduct()[pri:17, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:22 IST" name="SelectPublishProduct" finished-at="2023-09-27T22:30:25 IST" duration-ms="3070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SelectPublishProduct -->
+        <test-method signature="SelectAllProduct()[pri:18, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:25 IST" name="SelectAllProduct" finished-at="2023-09-27T22:30:28 IST" duration-ms="3099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SelectAllProduct -->
+        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:28 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-27T22:30:35 IST" duration-ms="6970" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyCollectionandClickOnImport -->
-        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:33 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-26T22:29:37 IST" duration-ms="4548" status="PASS">
+        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:35 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-27T22:30:42 IST" duration-ms="7067" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnyvendorandClickOnImport -->
-        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@7d3e8655]" started-at="2023-09-26T22:29:37 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-26T22:29:42 IST" duration-ms="5315" status="PASS">
+        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:42 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-27T22:30:49 IST" duration-ms="6959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectAnytypeandClickOnImport -->
+        <test-method signature="InstantImportViaCollection()[pri:22, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:49 IST" name="InstantImportViaCollection" finished-at="2023-09-27T22:30:59 IST" duration-ms="10313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InstantImportViaCollection -->
+        <test-method signature="InstantImportViaVendor()[pri:23, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:30:59 IST" name="InstantImportViaVendor" finished-at="2023-09-27T22:31:19 IST" duration-ms="20042" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InstantImportViaVendor -->
+        <test-method signature="InstantImportViatype()[pri:24, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-27T22:31:19 IST" name="InstantImportViatype" finished-at="2023-09-27T22:31:29 IST" duration-ms="9671" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InstantImportViatype -->
       </class> <!-- WalmartCaTest.OnboardTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

@@ -8,7 +8,19 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
+          <include name="InstantImportViatype"/>
           <include name="InstantImportViaVendor"/>
+          <include name="SelectAnyvendorandClickOnImport"/>
+          <include name="VerifyStep1Link"/>
+          <include name="selectProductVendor"/>
+          <include name="SelectAnytypeandClickOnImport"/>
+          <include name="SelectAllProduct"/>
+          <include name="selectProductType"/>
+          <include name="SelectAnyCollectionandClickOnImport"/>
+          <include name="SelectPublishProduct"/>
+          <include name="BothValid"/>
+          <include name="selectCollection"/>
+          <include name="InstantImportViaCollection"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>

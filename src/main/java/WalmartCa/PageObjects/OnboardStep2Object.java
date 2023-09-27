@@ -171,15 +171,15 @@ public class OnboardStep2Object extends utilities {
 		ArrayList<WebElement> fiteropts = new ArrayList<WebElement>(driver.findElements(applyFilteroptions));
 		fiteropts.get(i).click();
 		Listeners.test.log(Status.INFO, fiteropts.get(i).getText());
-		Actions ac = new Actions(driver);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,250)");
-		waitforClickable(fetched);
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		Thread.sleep(2000);
 		ElementClick(fetched, "clicked on fetched option");
 		WaittillvisibilityOfElementLocated(fetchoptions);
 		ArrayList<WebElement> AllOptionss = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		waitforClickable(fetchoptions);
 		if(AllOptionss.size() > 0) {
+			Listeners.test.log(Status.INFO, "Selected -"+AllOptionss.get(0).getText());
 			AllOptionss.get(0).click();
 		}
 		return AllOptionss;
@@ -190,6 +190,9 @@ public class OnboardStep2Object extends utilities {
 	public String ImportBytype(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions = Import(x);
 		dropdown.click();
+		Listeners.test.log(Status.INFO, "Clicked on dropdown");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
@@ -197,6 +200,10 @@ public class OnboardStep2Object extends utilities {
 
 	public String ImportByVendor(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions= Import(x);
+		dropdown.click();
+		Listeners.test.log(Status.INFO, "Clicked on dropdown");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
@@ -204,6 +211,10 @@ public class OnboardStep2Object extends utilities {
 
 	public String ImportBycollection(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions= Import(x);
+		dropdown.click();
+		Listeners.test.log(Status.INFO, "Clicked on dropdown");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		waitforClickable(importButton);
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();

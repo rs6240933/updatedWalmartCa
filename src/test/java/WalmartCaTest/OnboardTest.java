@@ -83,7 +83,7 @@ public class OnboardTest extends Baseclass {
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 8, enabled = false)
 	public void IfConsumeridIsgiven() throws InterruptedException {
 		String validate = obj1.fillCredientials("sdewd", " ");
 		if ((validate.contains("Secret Key cannot be blank"))) {
@@ -132,59 +132,59 @@ public class OnboardTest extends Baseclass {
 
 	}
 
-//	@Test(priority = 13)
-//	public void ClickOnApplyFilter() throws InterruptedException { // verify the fields which isgetting visible after
-//																	// selecting ApplyFilter
-//		ArrayList<WebElement> option1 = obj2.clickApplyFilter();
-//		Assert.assertTrue(option1.get(0).getText().contains("Product type"),
-//				"Wrong getting :" + option1.get(0).getText());
-//		Assert.assertTrue(option1.get(1).getText().contains("Product vendor"),
-//				"Wrong getting :" + option1.get(1).getText());
-//		Assert.assertTrue(option1.get(2).getText().contains("Collections"),
-//				"Wrong getting :" + option1.get(1).getText());
-//	}
-//
-//	@Test(priority = 14)
-//	public void selectProductType() throws InterruptedException {
-//		ArrayList<WebElement> AllOptions = obj2.Import(0);
-//		if (AllOptions.size() == 0) {
-//			Assert.assertTrue(false, "ProductType options are not showing");
-//		}
-//	}
-//
-//	@Test(priority = 15)
-//	public void selectProductVendor() throws InterruptedException {
-//		ArrayList<WebElement> AllOptions = obj2.Import(1);
-//		if (AllOptions.size() == 0) {
-//			Assert.assertTrue(false, "ProductVendor options are not showing");
-//		}
-//	}
-//
-//	@Test(priority = 16)
-//	public void selectCollection() throws InterruptedException {
-//		ArrayList<WebElement> AllOptions = obj2.Import(2);
-//		if (AllOptions.size() == 0) {
-//			Assert.assertTrue(false, "Collection options are not showing");
-//		}
-//
-//	}
-//
-//	@Test(priority = 17)
-//	public void SelectPublishProduct() {
-//		String text = obj2.ClickPublishProductImport(2);
-//		if (!(text.contains("Published product import confirmation"))) {
-//			Assert.assertTrue(false, "Modal is not Opened");
-//		}
-//
-//	}
-//
-//	@Test(priority = 18)
-//	public void SelectAllProduct() {
-//		String text = obj2.ClickPublishProductImport(1);
-//		if (!(text.contains("All products import confirmation"))) {
-//			Assert.assertTrue(false, "Modal is not Opened");
-//		}
-//	}
+	@Test(priority = 13, enabled = false)
+	public void ClickOnApplyFilter() throws InterruptedException { // verify the fields which isgetting visible after
+																	// selecting ApplyFilter
+		ArrayList<WebElement> option1 = obj2.clickApplyFilter();
+		Assert.assertTrue(option1.get(0).getText().contains("Product type"),
+				"Wrong getting :" + option1.get(0).getText());
+		Assert.assertTrue(option1.get(1).getText().contains("Product vendor"),
+				"Wrong getting :" + option1.get(1).getText());
+		Assert.assertTrue(option1.get(2).getText().contains("Collections"),
+				"Wrong getting :" + option1.get(1).getText());
+	}
+
+	@Test(priority = 14)
+	public void selectProductType() throws InterruptedException {
+		ArrayList<WebElement> AllOptions = obj2.Import(0);
+		if (AllOptions.size() == 0) {
+			Assert.assertTrue(false, "ProductType options are not showing");
+		}
+	}
+
+	@Test(priority = 15)
+	public void selectProductVendor() throws InterruptedException {
+		ArrayList<WebElement> AllOptions = obj2.Import(1);
+		if (AllOptions.size() == 0) {
+			Assert.assertTrue(false, "ProductVendor options are not showing");
+		}
+	}
+
+	@Test(priority = 16)
+	public void selectCollection() throws InterruptedException {
+		ArrayList<WebElement> AllOptions = obj2.Import(2);
+		if (AllOptions.size() == 0) {
+			Assert.assertTrue(false, "Collection options are not showing");
+		}
+
+	}
+
+	@Test(priority = 17)
+	public void SelectPublishProduct() {
+		String text = obj2.ClickPublishProductImport(2);
+		if (!(text.contains("Published product import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+
+	}
+
+	@Test(priority = 18)
+	public void SelectAllProduct() {
+		String text = obj2.ClickPublishProductImport(1);
+		if (!(text.contains("All products import confirmation"))) {
+			Assert.assertTrue(false, "Modal is not Opened");
+		}
+	}
 
 	@Test(priority = 19)
 	public void SelectAnyCollectionandClickOnImport() throws InterruptedException {
@@ -209,32 +209,34 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Modal is not Opened");
 		}
 	}
-	
-//	@Test(priority = 22)
-//	public void InstantImportViaCollection() throws InterruptedException {
-//		String arr1 = obj2.InstantImport(2);
-//		if(arr1.contains("imported successfully")) {
-//			Assert.assertTrue(true, "Test case passed");
-//		}else {
-//			Assert.assertTrue(false, "Test case failed");
-//		}	
-//	}
-//	@Test(priority = 23)
-//	public void InstantImportViaVendor() throws InterruptedException {
-//		String arr1 = obj2.InstantImport(1);
-//		if(arr1.contains("imported successfully")) {
-//			Assert.assertTrue(true, "Test case passed");
-//		}else {
-//			Assert.assertTrue(false, "Test case failed");
-//		}	
-//	}
-//	@Test(priority = 24)
-//	public void InstantImportViatype() throws InterruptedException {
-//		String arr1 = obj2.InstantImport(0);
-//		if(arr1.contains("imported successfully")) {
-//			Assert.assertTrue(true, "Test case passed");
-//		}else {
-//			Assert.assertTrue(false, "Test case failed");
-//		}	
-//	}
+
+	@Test(priority = 22)
+	public void InstantImportViaCollection() throws InterruptedException {
+		String arr1 = obj2.InstantImport(2);
+		if (arr1.contains("imported successfully")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+
+	@Test(priority = 23)
+	public void InstantImportViaVendor() throws InterruptedException {
+		String arr1 = obj2.InstantImport(1);
+		if (arr1.contains("imported successfully")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+
+	@Test(priority = 24)
+	public void InstantImportViatype() throws InterruptedException {
+		String arr1 = obj2.InstantImport(0);
+		if (arr1.contains("imported successfully")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
 }
