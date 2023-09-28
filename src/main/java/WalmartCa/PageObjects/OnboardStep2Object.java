@@ -189,7 +189,7 @@ public class OnboardStep2Object extends utilities {
 	
 	public String ImportBytype(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions = Import(x);
-		dropdown.click();
+		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
 		Listeners.test.log(Status.INFO, "Clicked on dropdown");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
@@ -200,7 +200,7 @@ public class OnboardStep2Object extends utilities {
 
 	public String ImportByVendor(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions= Import(x);
-		dropdown.click();
+		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
 		Listeners.test.log(Status.INFO, "Clicked on dropdown");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
@@ -211,7 +211,7 @@ public class OnboardStep2Object extends utilities {
 
 	public String ImportBycollection(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions= Import(x);
-		dropdown.click();
+		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
 		Listeners.test.log(Status.INFO, "Clicked on dropdown");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
