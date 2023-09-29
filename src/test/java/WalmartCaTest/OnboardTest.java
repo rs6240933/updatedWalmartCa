@@ -258,4 +258,31 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+	@Test(priority = 26)
+	public void VerifyNextButtonByCollection() {
+		String text = obj2.ClickOnNextButtonForAllFilters(2);
+		if (text.contains("Walmart Canada Category")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	@Test(priority = 27)
+	public void VerifyNextButtonByVendor() {
+		String text = obj2.ClickOnNextButtonForAllFilters(1);
+		if (text.contains("Walmart Canada Category")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	@Test(priority = 28)
+	public void VerifyNextButtonBytype() {
+		String text = obj2.ClickOnNextButtonForAllFilters(0);
+		if (text.contains("Walmart Canada Category")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
 }

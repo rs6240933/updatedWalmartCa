@@ -36,12 +36,13 @@ public class OnboardStep2Object extends utilities {
 	By importButton = By.xpath("(//div[@class='Polaris-FormLayout'])[3]/div/button");
 	@FindBy(css = "div[id='modal-header'] h2")
 	WebElement ModalHeader;
-	@FindBy (id="popup-confirm-cancel")
+	@FindBy(id = "popup-confirm-cancel")
 	WebElement InstantBtn;
 	By loaderText = By.xpath("//span[@class='loader-message']");
 	By bannermsg = By.xpath("(//div[@id=\"Banner3Content\"])[2]/p");
-	
-	
+	@FindBy(id = "ced_import_next_button")
+	WebElement Nextbtn;
+	By Step3Text = By.cssSelector("h4[class='Polaris-Heading custom-required']");
 
 	OnboardStep2Object(WebDriver driver) {
 		super(driver);
@@ -162,8 +163,7 @@ public class OnboardStep2Object extends utilities {
 		Listeners.test.log(Status.PASS, "Modal Opened");
 		return ModalHeader.getText();
 	}
-	
-	
+
 	public ArrayList<WebElement> Import(int i) throws InterruptedException {
 		refresh();
 		ArrayList<WebElement> dropdownOpt = openDropdown();
@@ -178,15 +178,14 @@ public class OnboardStep2Object extends utilities {
 		WaittillvisibilityOfElementLocated(fetchoptions);
 		ArrayList<WebElement> AllOptionss = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		waitforClickable(fetchoptions);
-		if(AllOptionss.size() > 0) {
-			Listeners.test.log(Status.INFO, "Selected -"+AllOptionss.get(0).getText());
+		if (AllOptionss.size() > 0) {
+			Listeners.test.log(Status.INFO, "Selected -" + AllOptionss.get(0).getText());
 			AllOptionss.get(0).click();
 		}
 		return AllOptionss;
-		
+
 	}
-	
-	
+
 	public String ImportBytype(int x) throws InterruptedException {
 		ArrayList<WebElement> AllOptions = Import(x);
 		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
@@ -199,7 +198,7 @@ public class OnboardStep2Object extends utilities {
 	}
 
 	public String ImportByVendor(int x) throws InterruptedException {
-		ArrayList<WebElement> AllOptions= Import(x);
+		ArrayList<WebElement> AllOptions = Import(x);
 		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
 		Listeners.test.log(Status.INFO, "Clicked on dropdown");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -210,7 +209,7 @@ public class OnboardStep2Object extends utilities {
 	}
 
 	public String ImportBycollection(int x) throws InterruptedException {
-		ArrayList<WebElement> AllOptions= Import(x);
+		ArrayList<WebElement> AllOptions = Import(x);
 		driver.findElement(By.xpath("(//h2[@class='Polaris-Heading'])[2]")).click();
 		Listeners.test.log(Status.INFO, "Clicked on dropdown");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -219,22 +218,23 @@ public class OnboardStep2Object extends utilities {
 		ElementClick(importButton, "Clicked on start import Button");
 		return openImportModal();
 	}
-	
+
 	public String InstantImport(int i) throws InterruptedException {
-		if(i==2) {
-			String txt =  ImportBycollection(2);
+		if (i == 2) {
+			String txt = ImportBycollection(2);
 		}
-		if(i==1) {
-			String txt =  ImportByVendor(1);
-		}if(i==0) {
-			String txt =  ImportBytype(0);
+		if (i == 1) {
+			String txt = ImportByVendor(1);
 		}
-		
+		if (i == 0) {
+			String txt = ImportBytype(0);
+		}
+
 		return ClickInstantImport();
-		
-		//ImportBytype
+
+		// ImportBytype
 	}
-	
+
 	public String ClickInstantImport() {
 		WebElementClick(InstantBtn, "Clicked on Instant Button");
 		WaitTillTextPresent(loaderText, "imported successfully!");
@@ -242,15 +242,38 @@ public class OnboardStep2Object extends utilities {
 		String loadermsg = driver.findElement(loaderText).getText();
 		WaittillvisibilityOfElementLocated(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p"));
 		String bannermsg = driver.findElement(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p")).getText();
-		Listeners.test.log(Status.INFO, "Loader text "+loadermsg);
-		Listeners.test.log(Status.INFO, "banner text "+bannermsg);
-			
+		Listeners.test.log(Status.INFO, "Loader text " + loadermsg);
+		Listeners.test.log(Status.INFO, "banner text " + bannermsg);
+
 		return bannermsg;
 	}
-	
+
 	public String AllandPublishproductImport(int option) {
 		ClickPublishProductImport(option);
 		return ClickInstantImport();
 	}
-	
+
+	public String ClickOnNextButtonForAllFilters(int i) {
+		String url = getpageUrl();
+		if(!(url.contains("sHopiFy=2"))) {
+			String[] array = url.split("walmartcanada");
+			System.out.print(array[0]);
+			String newUrl = array[0]+"walmartcanada/onboard/index?sHopiFy=2";
+			driver.navigate().to(newUrl);
+		}
+		try {
+			InstantImport(i);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return clickNextbtn();
+	}
+
+	public String clickNextbtn() {
+		WebElementClick(Nextbtn, "Clicked on Next Button");
+		Listeners.test.log(Status.INFO, "Clicked on Next Button");
+		waitForelementpresent(Step3Text);
+		return driver.findElement(Step3Text).getText();
+	}
 }
