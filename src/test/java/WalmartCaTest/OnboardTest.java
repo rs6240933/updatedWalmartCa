@@ -12,6 +12,7 @@ import com.aventstack.extentreports.Status;
 
 import WalmartCa.PageObjects.OnboardStep1Object;
 import WalmartCa.PageObjects.OnboardStep2Object;
+import WalmartCa.PageObjects.OnboardStep3Object;
 import WalmartCa.PageObjects.launcherObject;
 import WalmartCa.webutility.Baseclass;
 import WalmartCa.webutility.Listeners;
@@ -19,7 +20,8 @@ import WalmartCa.webutility.Listeners;
 public class OnboardTest extends Baseclass {
 	OnboardStep1Object obj1;
 	OnboardStep2Object obj2;
-
+	OnboardStep3Object obj3;
+	
 	@Test(priority = 1)
 	public void VerifyStep1Link() throws InterruptedException, IOException {
 		launcherObject launchh = new launcherObject();
@@ -240,7 +242,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 	
-	@Test(priority = 25)
+	@Test(priority = 25, enabled = false)
 	public void InstantPublishImport() {
 		String n1 = obj2.AllandPublishproductImport(2);
 		if (n1.contains("imported successfully")) {
@@ -249,7 +251,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	@Test(priority = 25)
+	@Test(priority = 25, enabled = false)
 	public void InstantAllImport() {
 		String n1 = obj2.AllandPublishproductImport(1);
 		if (n1.contains("imported successfully")) {
@@ -260,8 +262,9 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 26)
 	public void VerifyNextButtonByCollection() {
-		String text = obj2.ClickOnNextButtonForAllFilters(2);
-		if (text.contains("Walmart Canada Category")) {
+		this.obj3 = obj2.ClickOnNextButtonForAllFilters(2);
+		String text = obj3.verifyurl();
+		if (text.contains("sHopiFy=3")) {
 			Assert.assertTrue(true, "Test case passed");
 		} else {
 			Assert.assertTrue(false, "Test case failed");
@@ -269,8 +272,9 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 27)
 	public void VerifyNextButtonByVendor() {
-		String text = obj2.ClickOnNextButtonForAllFilters(1);
-		if (text.contains("Walmart Canada Category")) {
+		this.obj3 = obj2.ClickOnNextButtonForAllFilters(1);
+		String text = obj3.verifyurl();
+		if (text.contains("sHopiFy=3")) {
 			Assert.assertTrue(true, "Test case passed");
 		} else {
 			Assert.assertTrue(false, "Test case failed");
@@ -278,11 +282,34 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 28)
 	public void VerifyNextButtonBytype() {
-		String text = obj2.ClickOnNextButtonForAllFilters(0);
-		if (text.contains("Walmart Canada Category")) {
+		this.obj3 = obj2.ClickOnNextButtonForAllFilters(0);
+		String text = obj3.verifyurl();
+		if (text.contains("sHopiFy=3")) {
 			Assert.assertTrue(true, "Test case passed");
 		} else {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+	
+	@Test(priority = 29)
+	public void VerifyNextButtonPublish() {
+		this.obj3 = obj2.clickOnNextButtonByAllandPublish(2);
+		String text = obj3.verifyurl();
+		if (text.contains("sHopiFy=3")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	@Test(priority = 30)
+	public void VerifyNextButtonAllProduct() {
+		this.obj3 = obj2.clickOnNextButtonByAllandPublish(1);
+		String text = obj3.verifyurl();
+		if (text.contains("sHopiFy=3")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	
 }

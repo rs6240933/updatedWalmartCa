@@ -253,7 +253,7 @@ public class OnboardStep2Object extends utilities {
 		return ClickInstantImport();
 	}
 
-	public String ClickOnNextButtonForAllFilters(int i) {
+	public OnboardStep3Object ClickOnNextButtonForAllFilters(int i) {
 		String url = getpageUrl();
 		if(!(url.contains("sHopiFy=2"))) {
 			String[] array = url.split("walmartcanada");
@@ -270,10 +270,21 @@ public class OnboardStep2Object extends utilities {
 		return clickNextbtn();
 	}
 
-	public String clickNextbtn() {
+	public OnboardStep3Object clickNextbtn() {
+		OnboardStep3Object obj3 = null;
 		WebElementClick(Nextbtn, "Clicked on Next Button");
 		Listeners.test.log(Status.INFO, "Clicked on Next Button");
 		waitForelementpresent(Step3Text);
-		return driver.findElement(Step3Text).getText();
+		if(driver.findElement(Step3Text).getText().contains("Walmart Canada Category")) {
+			obj3 = new OnboardStep3Object(driver);
+		}
+		return obj3;
 	}
+	
+	public OnboardStep3Object clickOnNextButtonByAllandPublish(int i) {
+		ClickPublishProductImport(i);
+		ClickInstantImport();
+		return clickNextbtn();
+	}
+	
 }

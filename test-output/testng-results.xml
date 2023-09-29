@@ -1,64 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-28T21:07:53 IST" name="Suite" finished-at="2023-09-28T21:10:39 IST" duration-ms="166506">
+  <suite started-at="2023-09-29T22:19:10 IST" name="Suite" finished-at="2023-09-29T22:21:29 IST" duration-ms="138596">
     <groups>
     </groups>
-    <test started-at="2023-09-28T21:07:53 IST" name="Test" finished-at="2023-09-28T21:10:39 IST" duration-ms="166506">
+    <test started-at="2023-09-29T22:19:10 IST" name="Test" finished-at="2023-09-29T22:21:29 IST" duration-ms="138596">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:07:53 IST" name="VerifyStep1Link" finished-at="2023-09-28T21:08:58 IST" duration-ms="65400" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@51891008]" started-at="2023-09-29T22:19:10 IST" name="VerifyStep1Link" finished-at="2023-09-29T22:20:19 IST" duration-ms="69176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:08:58 IST" name="BothValid" finished-at="2023-09-28T21:09:06 IST" duration-ms="8153" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@51891008]" started-at="2023-09-29T22:20:19 IST" name="BothValid" finished-at="2023-09-29T22:20:26 IST" duration-ms="7036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="selectProductType()[pri:14, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:06 IST" name="selectProductType" finished-at="2023-09-28T21:09:17 IST" duration-ms="10266" status="PASS">
+        <test-method signature="VerifyNextButtonByCollection()[pri:26, instance:WalmartCaTest.OnboardTest@51891008]" started-at="2023-09-29T22:20:26 IST" name="VerifyNextButtonByCollection" finished-at="2023-09-29T22:20:48 IST" duration-ms="22258" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectProductType -->
-        <test-method signature="selectProductVendor()[pri:15, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:17 IST" name="selectProductVendor" finished-at="2023-09-28T21:09:23 IST" duration-ms="6096" status="PASS">
+        </test-method> <!-- VerifyNextButtonByCollection -->
+        <test-method signature="VerifyNextButtonByVendor()[pri:27, instance:WalmartCaTest.OnboardTest@51891008]" started-at="2023-09-29T22:20:49 IST" name="VerifyNextButtonByVendor" finished-at="2023-09-29T22:21:14 IST" duration-ms="25414" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectProductVendor -->
-        <test-method signature="selectCollection()[pri:16, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:23 IST" name="selectCollection" finished-at="2023-09-28T21:09:29 IST" duration-ms="6238" status="PASS">
+        </test-method> <!-- VerifyNextButtonByVendor -->
+        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@51891008]" started-at="2023-09-29T22:21:14 IST" name="VerifyNextButtonBytype" finished-at="2023-09-29T22:21:29 IST" duration-ms="14590" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectCollection -->
-        <test-method signature="SelectPublishProduct()[pri:17, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:29 IST" name="SelectPublishProduct" finished-at="2023-09-28T21:09:32 IST" duration-ms="3041" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectPublishProduct -->
-        <test-method signature="SelectAllProduct()[pri:18, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:32 IST" name="SelectAllProduct" finished-at="2023-09-28T21:09:35 IST" duration-ms="3032" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectAllProduct -->
-        <test-method signature="SelectAnyCollectionandClickOnImport()[pri:19, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:35 IST" name="SelectAnyCollectionandClickOnImport" finished-at="2023-09-28T21:09:42 IST" duration-ms="6771" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectAnyCollectionandClickOnImport -->
-        <test-method signature="SelectAnyvendorandClickOnImport()[pri:20, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:42 IST" name="SelectAnyvendorandClickOnImport" finished-at="2023-09-28T21:09:49 IST" duration-ms="7024" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectAnyvendorandClickOnImport -->
-        <test-method signature="SelectAnytypeandClickOnImport()[pri:21, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:49 IST" name="SelectAnytypeandClickOnImport" finished-at="2023-09-28T21:09:56 IST" duration-ms="6732" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SelectAnytypeandClickOnImport -->
-        <test-method signature="InstantImportViaCollection()[pri:22, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:09:56 IST" name="InstantImportViaCollection" finished-at="2023-09-28T21:10:07 IST" duration-ms="11499" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InstantImportViaCollection -->
-        <test-method signature="InstantImportViaVendor()[pri:23, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:10:07 IST" name="InstantImportViaVendor" finished-at="2023-09-28T21:10:29 IST" duration-ms="21765" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InstantImportViaVendor -->
-        <test-method signature="InstantImportViatype()[pri:24, instance:WalmartCaTest.OnboardTest@14dd7b39]" started-at="2023-09-28T21:10:29 IST" name="InstantImportViatype" finished-at="2023-09-28T21:10:39 IST" duration-ms="10247" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InstantImportViatype -->
+        </test-method> <!-- VerifyNextButtonBytype -->
       </class> <!-- WalmartCaTest.OnboardTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
