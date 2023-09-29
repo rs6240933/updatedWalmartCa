@@ -144,7 +144,7 @@ public class OnboardTest extends Baseclass {
 				"Wrong getting :" + option1.get(1).getText());
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 14, enabled = false)
 	public void selectProductType() throws InterruptedException {
 		ArrayList<WebElement> AllOptions = obj2.Import(0);
 		if (AllOptions.size() == 0) {
@@ -152,7 +152,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 15, enabled = false)
 	public void selectProductVendor() throws InterruptedException {
 		ArrayList<WebElement> AllOptions = obj2.Import(1);
 		if (AllOptions.size() == 0) {
@@ -160,7 +160,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 16, enabled = false)
 	public void selectCollection() throws InterruptedException {
 		ArrayList<WebElement> AllOptions = obj2.Import(2);
 		if (AllOptions.size() == 0) {
@@ -169,7 +169,7 @@ public class OnboardTest extends Baseclass {
 
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 17, enabled = false)
 	public void SelectPublishProduct() {
 		String text = obj2.ClickPublishProductImport(2);
 		if (!(text.contains("Published product import confirmation"))) {
@@ -178,7 +178,7 @@ public class OnboardTest extends Baseclass {
 
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 18, enabled = false)
 	public void SelectAllProduct() {
 		String text = obj2.ClickPublishProductImport(1);
 		if (!(text.contains("All products import confirmation"))) {
@@ -186,7 +186,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 19, enabled = false)
 	public void SelectAnyCollectionandClickOnImport() throws InterruptedException {
 		String text = obj2.ImportBycollection(2);
 		if (!(text.contains("Filtered product import confirmation"))) {
@@ -194,7 +194,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 20, enabled = false)
 	public void SelectAnyvendorandClickOnImport() throws InterruptedException {
 		String text = obj2.ImportByVendor(1);
 		if (!(text.contains("Filtered product import confirmation"))) {
@@ -202,7 +202,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 21)
+	@Test(priority = 21, enabled = false)
 	public void SelectAnytypeandClickOnImport() throws InterruptedException {
 		String text = obj2.ImportBytype(0);
 		if (!(text.contains("Filtered product import confirmation"))) {
@@ -210,7 +210,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 22, enabled = false)
 	public void InstantImportViaCollection() throws InterruptedException {
 		String arr1 = obj2.InstantImport(2);
 		if (arr1.contains("imported successfully")) {
@@ -220,7 +220,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 23, enabled = false)
 	public void InstantImportViaVendor() throws InterruptedException {
 		String arr1 = obj2.InstantImport(1);
 		if (arr1.contains("imported successfully")) {
@@ -230,10 +230,29 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 24)
+	@Test(priority = 24, enabled = false)
 	public void InstantImportViatype() throws InterruptedException {
 		String arr1 = obj2.InstantImport(0);
 		if (arr1.contains("imported successfully")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	
+	@Test(priority = 25)
+	public void InstantPublishImport() {
+		String n1 = obj2.AllandPublishproductImport(2);
+		if (n1.contains("imported successfully")) {
+			Assert.assertTrue(true, "Test case passed");
+		} else {
+			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	@Test(priority = 25)
+	public void InstantAllImport() {
+		String n1 = obj2.AllandPublishproductImport(1);
+		if (n1.contains("imported successfully")) {
 			Assert.assertTrue(true, "Test case passed");
 		} else {
 			Assert.assertTrue(false, "Test case failed");

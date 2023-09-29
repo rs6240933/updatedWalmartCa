@@ -229,6 +229,13 @@ public class OnboardStep2Object extends utilities {
 		}if(i==0) {
 			String txt =  ImportBytype(0);
 		}
+		
+		return ClickInstantImport();
+		
+		//ImportBytype
+	}
+	
+	public String ClickInstantImport() {
 		WebElementClick(InstantBtn, "Clicked on Instant Button");
 		WaitTillTextPresent(loaderText, "imported successfully!");
 		Listeners.test.log(Status.PASS, "Loader displayed Successfully");
@@ -239,7 +246,11 @@ public class OnboardStep2Object extends utilities {
 		Listeners.test.log(Status.INFO, "banner text "+bannermsg);
 			
 		return bannermsg;
-		//ImportBytype
+	}
+	
+	public String AllandPublishproductImport(int option) {
+		ClickPublishProductImport(option);
+		return ClickInstantImport();
 	}
 	
 }
