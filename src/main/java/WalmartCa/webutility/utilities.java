@@ -86,7 +86,7 @@ public class utilities {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
 	public void WaitforElementClickable(By FindElement) {
@@ -97,6 +97,9 @@ public class utilities {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 	}
-	
+	public void visibilityofElement(WebElement Element) {
+		wait.until(ExpectedConditions.visibilityOf(Element));
+		
+	}
 	
 }

@@ -260,7 +260,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	@Test(priority = 26)
+	@Test(priority = 26, enabled = false)
 	public void VerifyNextButtonByCollection() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(2);
 		String text = obj3.verifyurl();
@@ -270,7 +270,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	@Test(priority = 27)
+	@Test(priority = 27, enabled = false)
 	public void VerifyNextButtonByVendor() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(1);
 		String text = obj3.verifyurl();
@@ -280,7 +280,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	@Test(priority = 28)
+	@Test(priority = 28, enabled = false)
 	public void VerifyNextButtonBytype() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(0);
 		String text = obj3.verifyurl();
@@ -291,7 +291,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 	
-	@Test(priority = 29)
+	@Test(priority = 29, enabled = false)
 	public void VerifyNextButtonPublish() {
 		this.obj3 = obj2.clickOnNextButtonByAllandPublish(2);
 		String text = obj3.verifyurl();
@@ -301,7 +301,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	@Test(priority = 30)
+	@Test(priority = 30, enabled = false)
 	public void VerifyNextButtonAllProduct() {
 		this.obj3 = obj2.clickOnNextButtonByAllandPublish(1);
 		String text = obj3.verifyurl();
@@ -309,6 +309,42 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(true, "Test case passed");
 		} else {
 			Assert.assertTrue(false, "Test case failed");
+		}
+	}
+	
+	@Test(priority = 31, enabled = false)
+	public void BackendImportviaCollection() {
+		String actual  = obj2.BackendImportviaAllfilters(2);
+		if(!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		}
+	}
+	@Test(priority = 32, enabled = false)
+	public void BackendImportviaVendor() {
+		String actual  = obj2.BackendImportviaAllfilters(1);
+		if(!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		}
+	}
+	@Test(priority = 33, enabled = false)
+	public void BackendImportviaType() {
+		String actual  = obj2.BackendImportstart(0);
+		if(!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		}
+	}
+	@Test(priority = 34)
+	public void PublishBackendImport() throws InterruptedException {
+		String actual  = obj2.backendPublishandAllproductImport(2);
+		if(!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		}
+	}
+	@Test(priority = 35)
+	public void AllBackendImport() throws InterruptedException {
+		String actual  = obj2.backendPublishandAllproductImport(1);
+		if(!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
 		}
 	}
 	

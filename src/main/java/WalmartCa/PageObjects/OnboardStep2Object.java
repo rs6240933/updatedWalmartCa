@@ -43,7 +43,18 @@ public class OnboardStep2Object extends utilities {
 	@FindBy(id = "ced_import_next_button")
 	WebElement Nextbtn;
 	By Step3Text = By.cssSelector("h4[class='Polaris-Heading custom-required']");
-
+	@FindBy(id = "popup-confirm")
+	WebElement backendBtn;
+	By popover = By.xpath("//div[@id='ongoing-activity']/div/div");
+	@FindBy(xpath = "//h2[@class='Polaris-Heading line_clamp_ele_1 ']")
+	WebElement popoverText;
+	@FindBy(xpath = "//button[@class='Polaris-Button Polaris-Button--plain']/a")
+	WebElement seeAll;
+	@FindBy(xpath = "(//div[@class='Polaris-ButtonGroup']/div/button/span)[1]")
+	WebElement Abort;
+	@FindBy(id = "popup-confirm")
+	WebElement AbortConfrm;
+	
 	OnboardStep2Object(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -179,8 +190,12 @@ public class OnboardStep2Object extends utilities {
 		ArrayList<WebElement> AllOptionss = new ArrayList<WebElement>(driver.findElements(fetchoptions));
 		waitforClickable(fetchoptions);
 		if (AllOptionss.size() > 0) {
-			Listeners.test.log(Status.INFO, "Selected -" + AllOptionss.get(0).getText());
-			AllOptionss.get(0).click();
+			for (int z = 0; z < AllOptionss.size(); z++) {
+				Listeners.test.log(Status.INFO, "Selected -" + AllOptionss.get(z).getText());
+				AllOptionss.get(z).click();
+				
+			}
+			
 		}
 		return AllOptionss;
 
@@ -255,10 +270,10 @@ public class OnboardStep2Object extends utilities {
 
 	public OnboardStep3Object ClickOnNextButtonForAllFilters(int i) {
 		String url = getpageUrl();
-		if(!(url.contains("sHopiFy=2"))) {
+		if (!(url.contains("sHopiFy=2"))) {
 			String[] array = url.split("walmartcanada");
 			System.out.print(array[0]);
-			String newUrl = array[0]+"walmartcanada/onboard/index?sHopiFy=2";
+			String newUrl = array[0] + "walmartcanada/onboard/index?sHopiFy=2";
 			driver.navigate().to(newUrl);
 		}
 		try {
@@ -275,16 +290,83 @@ public class OnboardStep2Object extends utilities {
 		WebElementClick(Nextbtn, "Clicked on Next Button");
 		Listeners.test.log(Status.INFO, "Clicked on Next Button");
 		waitForelementpresent(Step3Text);
-		if(driver.findElement(Step3Text).getText().contains("Walmart Canada Category")) {
+		if (driver.findElement(Step3Text).getText().contains("Walmart Canada Category")) {
 			obj3 = new OnboardStep3Object(driver);
 		}
 		return obj3;
 	}
-	
+
 	public OnboardStep3Object clickOnNextButtonByAllandPublish(int i) {
 		ClickPublishProductImport(i);
 		ClickInstantImport();
 		return clickNextbtn();
 	}
+
+	public String BackendImportstart(int i) {
+		String url = getpageUrl();
+		String text = null;
+		if (!(url.contains("sHopiFy=2"))) {
+			String[] array = url.split("walmartcanada");
+			System.out.print(array[0]);
+			String newUrl = array[0] + "walmartcanada/onboard/index?sHopiFy=2";
+			driver.navigate().to(newUrl);
+		}
+		try {
+			text = BackendImport(i);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
+
+	public String BackendImport(int i) throws InterruptedException {
+		if (i == 2) {
+			String txt = ImportBycollection(2);
+		}
+		if (i == 1) {
+			String txt = ImportByVendor(1);
+		}
+		if (i == 0) {
+			String txt = ImportBytype(0);
+		}
+
+		return ClickBackendImport();
+
+	}
+
+	public String ClickBackendImport() throws InterruptedException {
+		WebElementClick(backendBtn, "Clicked on Backend Import Button");
+		WaitTillTextPresent(loaderText, "imported successfully!");
+		Listeners.test.log(Status.PASS, "Loader displayed Successfully");
+		WaittillvisibilityOfElementLocated(popover);
+		refresh();
+		driver.findElement(By.xpath("//div[@class='Polaris-Card__Section']/button/span")).click();
+		visibilityofElement(popoverText);
+		String popuptxt = popoverText.getText();
+		Listeners.test.log(Status.INFO, "Popover message -"+popuptxt);
+		WebElementClick(seeAll, "Clicked on See all button");
+		ArrayList<String> n = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(n.get(3));
+		WebElementClick(Abort, "Clicked on Abort button");
+		WebElementClick(AbortConfrm, "Aborted the process");
+		driver.close();
+		
+		driver.switchTo().window(n.get(2));
+		clickNextbtn();
+		return popuptxt;
+	}
 	
+	public String backendPublishandAllproductImport(int i) throws InterruptedException {
+		String url = getpageUrl();
+		if (!(url.contains("sHopiFy=2"))) {
+			String[] array = url.split("walmartcanada");
+			System.out.print(array[0]);
+			String newUrl = array[0] + "walmartcanada/onboard/index?sHopiFy=2";
+			driver.navigate().to(newUrl);
+		}
+		ClickPublishProductImport(i);
+		return ClickBackendImport();
+	}
+
 }
