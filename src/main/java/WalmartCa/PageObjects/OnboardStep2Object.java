@@ -54,6 +54,11 @@ public class OnboardStep2Object extends utilities {
 	WebElement Abort;
 	@FindBy(id = "popup-confirm")
 	WebElement AbortConfrm;
+	@FindBy (id = "LoadingMSG")
+	WebElement loader;
+	
+	
+	
 	
 	OnboardStep2Object(WebDriver driver) {
 		super(driver);
@@ -255,6 +260,15 @@ public class OnboardStep2Object extends utilities {
 		WaitTillTextPresent(loaderText, "imported successfully!");
 		Listeners.test.log(Status.PASS, "Loader displayed Successfully");
 		String loadermsg = driver.findElement(loaderText).getText();
+		WaitForAttribute(loader);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		WaittillvisibilityOfElementLocated(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p"));
 		String bannermsg = driver.findElement(By.xpath("(//div[@id=\"Banner3Content\"])[2]/p")).getText();
 		Listeners.test.log(Status.INFO, "Loader text " + loadermsg);
@@ -287,6 +301,14 @@ public class OnboardStep2Object extends utilities {
 
 	public OnboardStep3Object clickNextbtn() {
 		OnboardStep3Object obj3 = null;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		WebElementClick(Nextbtn, "Clicked on Next Button");
 		Listeners.test.log(Status.INFO, "Clicked on Next Button");
 		waitForelementpresent(Step3Text);
@@ -297,6 +319,13 @@ public class OnboardStep2Object extends utilities {
 	}
 
 	public OnboardStep3Object clickOnNextButtonByAllandPublish(int i) {
+		String url = getpageUrl();
+		if (!(url.contains("sHopiFy=2"))) {
+			String[] array = url.split("walmartcanada");
+			System.out.print(array[0]);
+			String newUrl = array[0] + "walmartcanada/onboard/index?sHopiFy=2";
+			driver.navigate().to(newUrl);
+		}
 		ClickPublishProductImport(i);
 		ClickInstantImport();
 		return clickNextbtn();

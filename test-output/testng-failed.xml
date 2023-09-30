@@ -8,7 +8,7 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
-          <include name="AllBackendImport"/>
+          <include name="InstantImportViaVendor"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>

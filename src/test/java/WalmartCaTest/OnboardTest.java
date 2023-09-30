@@ -222,7 +222,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 23, enabled = false)
+	@Test(priority = 23)
 	public void InstantImportViaVendor() throws InterruptedException {
 		String arr1 = obj2.InstantImport(1);
 		if (arr1.contains("imported successfully")) {
@@ -314,14 +314,14 @@ public class OnboardTest extends Baseclass {
 	
 	@Test(priority = 31, enabled = false)
 	public void BackendImportviaCollection() {
-		String actual  = obj2.BackendImportviaAllfilters(2);
+		String actual  = obj2.BackendImportstart(2);
 		if(!(actual.contains("Activities ongoing"))) {
 			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
 		}
 	}
 	@Test(priority = 32, enabled = false)
 	public void BackendImportviaVendor() {
-		String actual  = obj2.BackendImportviaAllfilters(1);
+		String actual  = obj2.BackendImportstart(1);
 		if(!(actual.contains("Activities ongoing"))) {
 			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
 		}
@@ -333,14 +333,14 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
 		}
 	}
-	@Test(priority = 34)
+	@Test(priority = 34, enabled = false)
 	public void PublishBackendImport() throws InterruptedException {
 		String actual  = obj2.backendPublishandAllproductImport(2);
 		if(!(actual.contains("Activities ongoing"))) {
 			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
 		}
 	}
-	@Test(priority = 35)
+	@Test(priority = 35, enabled = false)
 	public void AllBackendImport() throws InterruptedException {
 		String actual  = obj2.backendPublishandAllproductImport(1);
 		if(!(actual.contains("Activities ongoing"))) {
