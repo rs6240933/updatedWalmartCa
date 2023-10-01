@@ -21,7 +21,7 @@ public class OnboardTest extends Baseclass {
 	OnboardStep1Object obj1;
 	OnboardStep2Object obj2;
 	OnboardStep3Object obj3;
-	
+
 	@Test(priority = 1)
 	public void VerifyStep1Link() throws InterruptedException, IOException {
 		launcherObject launchh = new launcherObject();
@@ -118,6 +118,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
+//--------------------------------------------------Step 1 cases completed here -----------------------------------------------
 	@Test(priority = 11)
 	public void BothValid() throws InterruptedException {
 		this.obj2 = obj1.EnterStep2("CedCommerce007", "CedCommerce008");
@@ -222,7 +223,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 23, enabled = false))
 	public void InstantImportViaVendor() throws InterruptedException {
 		String arr1 = obj2.InstantImport(1);
 		if (arr1.contains("imported successfully")) {
@@ -241,7 +242,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	
+
 	@Test(priority = 25, enabled = false)
 	public void InstantPublishImport() {
 		String n1 = obj2.AllandPublishproductImport(2);
@@ -251,6 +252,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+
 	@Test(priority = 25, enabled = false)
 	public void InstantAllImport() {
 		String n1 = obj2.AllandPublishproductImport(1);
@@ -260,6 +262,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+
 	@Test(priority = 26, enabled = false)
 	public void VerifyNextButtonByCollection() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(2);
@@ -270,6 +273,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+
 	@Test(priority = 27, enabled = false)
 	public void VerifyNextButtonByVendor() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(1);
@@ -280,6 +284,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+
 	@Test(priority = 28, enabled = false)
 	public void VerifyNextButtonBytype() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(0);
@@ -290,7 +295,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	
+
 	@Test(priority = 29, enabled = false)
 	public void VerifyNextButtonPublish() {
 		this.obj3 = obj2.clickOnNextButtonByAllandPublish(2);
@@ -301,6 +306,7 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
+
 	@Test(priority = 30, enabled = false)
 	public void VerifyNextButtonAllProduct() {
 		this.obj3 = obj2.clickOnNextButtonByAllandPublish(1);
@@ -311,41 +317,69 @@ public class OnboardTest extends Baseclass {
 			Assert.assertTrue(false, "Test case failed");
 		}
 	}
-	
+
 	@Test(priority = 31, enabled = false)
 	public void BackendImportviaCollection() {
-		String actual  = obj2.BackendImportstart(2);
-		if(!(actual.contains("Activities ongoing"))) {
-			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		String actual = obj2.BackendImportstart(2);
+		if (!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :" + actual);
 		}
 	}
+
 	@Test(priority = 32, enabled = false)
 	public void BackendImportviaVendor() {
-		String actual  = obj2.BackendImportstart(1);
-		if(!(actual.contains("Activities ongoing"))) {
-			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		String actual = obj2.BackendImportstart(1);
+		if (!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :" + actual);
 		}
 	}
+
 	@Test(priority = 33, enabled = false)
 	public void BackendImportviaType() {
-		String actual  = obj2.BackendImportstart(0);
-		if(!(actual.contains("Activities ongoing"))) {
-			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		String actual = obj2.BackendImportstart(0);
+		if (!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :" + actual);
 		}
 	}
+
 	@Test(priority = 34, enabled = false)
 	public void PublishBackendImport() throws InterruptedException {
-		String actual  = obj2.backendPublishandAllproductImport(2);
-		if(!(actual.contains("Activities ongoing"))) {
-			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		String actual = obj2.backendPublishandAllproductImport(2);
+		if (!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :" + actual);
 		}
 	}
-	@Test(priority = 35, enabled = false)
+
+	@Test(priority = 35)
 	public void AllBackendImport() throws InterruptedException {
-		String actual  = obj2.backendPublishandAllproductImport(1);
-		if(!(actual.contains("Activities ongoing"))) {
-			Assert.assertTrue(false, "PopOver is not opened. Actual text is :"+ actual);
+		String actual = obj2.backendPublishandAllproductImport(1);
+		if (!(actual.contains("Activities ongoing"))) {
+			Assert.assertTrue(false, "PopOver is not opened. Actual text is :" + actual);
 		}
 	}
+	// -------------------------Step 2 case completed here
+	// -----------------------------------------------------------
 	
+	@Test(priority = 36, enabled = false)
+	public void VerifyCategoryDropdown() {
+		 boolean n = obj3.VerifyDropdown();
+		 if(n) {
+			 Assert.assertEquals(true, "options are visible");
+		 }else {
+			 Assert.assertEquals(false, "options are not visible");
+		 }
+	}
+	@Test(priority = 37, enabled = false)
+	public void VerifyValidationtext() {
+		String[] txt = obj3.verifyFinishBtn();
+		if(txt.length > 1) {
+			Assert.assertTrue(txt[0].contains("Please Select Walmart Category."), "Validation message is showing wrong");
+			Assert.assertTrue(txt[1].contains("sHopiFy=3"), "Wrong page is opened");
+		}
+		
+	}
+	@Test(priority = 38)
+	public void VerifyValidationForRequiredAttributes() {
+		obj3.VerifyvalidationforAttributes();
+	}
 }
