@@ -1,29 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-01T21:48:36 IST" name="Suite" finished-at="2023-10-01T21:51:48 IST" duration-ms="191681">
+  <suite started-at="2023-10-01T23:04:38 IST" name="Suite" finished-at="2023-10-01T23:07:49 IST" duration-ms="190765">
     <groups>
     </groups>
-    <test started-at="2023-10-01T21:48:36 IST" name="Test" finished-at="2023-10-01T21:51:48 IST" duration-ms="191681">
+    <test started-at="2023-10-01T23:04:38 IST" name="Test" finished-at="2023-10-01T23:07:49 IST" duration-ms="190765">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:48:36 IST" name="VerifyStep1Link" finished-at="2023-10-01T21:49:30 IST" duration-ms="53537" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@1b66c0fb]" started-at="2023-10-01T23:04:38 IST" name="VerifyStep1Link" finished-at="2023-10-01T23:05:43 IST" duration-ms="65071" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:49:30 IST" name="BothValid" finished-at="2023-10-01T21:49:41 IST" duration-ms="10852" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@1b66c0fb]" started-at="2023-10-01T23:05:43 IST" name="BothValid" finished-at="2023-10-01T23:05:51 IST" duration-ms="8460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:49:41 IST" name="VerifyNextButtonBytype" finished-at="2023-10-01T21:51:18 IST" duration-ms="97717" status="PASS">
+        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@1b66c0fb]" started-at="2023-10-01T23:05:51 IST" name="VerifyNextButtonBytype" finished-at="2023-10-01T23:06:19 IST" duration-ms="27927" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyNextButtonBytype -->
-        <test-method signature="AllBackendImport()[pri:35, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:51:18 IST" name="AllBackendImport" finished-at="2023-10-01T21:51:44 IST" duration-ms="26153" status="PASS">
+        <test-method signature="AllBackendImport()[pri:35, instance:WalmartCaTest.OnboardTest@1b66c0fb]" started-at="2023-10-01T23:06:19 IST" name="AllBackendImport" finished-at="2023-10-01T23:06:48 IST" duration-ms="28659" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AllBackendImport -->
-        <test-method signature="VerifyValidationForRequiredAttributes()[pri:38, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:51:44 IST" name="VerifyValidationForRequiredAttributes" finished-at="2023-10-01T21:51:48 IST" duration-ms="3329" status="PASS">
+        <test-method signature="VerifyValidationForRequiredAttributes()[pri:38, instance:WalmartCaTest.OnboardTest@1b66c0fb]" started-at="2023-10-01T23:06:48 IST" name="VerifyValidationForRequiredAttributes" finished-at="2023-10-01T23:07:49 IST" duration-ms="60576" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Validation message is not showing for some categories] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Validation message is not showing for some categories] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:644)
+at WalmartCaTest.OnboardTest.VerifyValidationForRequiredAttributes(OnboardTest.java:386)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyValidationForRequiredAttributes -->

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="VerifyValidationForRequiredAttributes">VerifyValidationForRequiredAttributes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -121,11 +135,6 @@
                         <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="VerifyStep1Link">VerifyStep1Link</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="VerifyValidationForRequiredAttributes">VerifyValidationForRequiredAttributes</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -138,6 +147,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">WalmartCaTest.OnboardTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyValidationForRequiredAttributes">
+                  </a> <!-- VerifyValidationForRequiredAttributes -->
+                  <span class="method-name">VerifyValidationForRequiredAttributes</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Validation message is not showing for some categories] but found [false]
+	at WalmartCaTest.OnboardTest.VerifyValidationForRequiredAttributes(OnboardTest.java:386)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -170,13 +199,6 @@
                   <a name="VerifyStep1Link">
                   </a> <!-- VerifyStep1Link -->
                   <span class="method-name">VerifyStep1Link</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyValidationForRequiredAttributes">
-                  </a> <!-- VerifyValidationForRequiredAttributes -->
-                  <span class="method-name">VerifyValidationForRequiredAttributes</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -238,25 +260,25 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyNextButtonBytype')
+data.setCell(0, 1, 'VerifyStep1Link')
 data.setCell(0, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(0, 3, 97717);
+data.setCell(0, 3, 65071);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyStep1Link')
+data.setCell(1, 1, 'VerifyValidationForRequiredAttributes')
 data.setCell(1, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(1, 3, 53537);
+data.setCell(1, 3, 60576);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'AllBackendImport')
 data.setCell(2, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(2, 3, 26153);
+data.setCell(2, 3, 28659);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'BothValid')
+data.setCell(3, 1, 'VerifyNextButtonBytype')
 data.setCell(3, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(3, 3, 10852);
+data.setCell(3, 3, 27927);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'VerifyValidationForRequiredAttributes')
+data.setCell(4, 1, 'BothValid')
 data.setCell(4, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(4, 3, 3329);
+data.setCell(4, 3, 8460);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -282,73 +304,73 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">WalmartCaTest.OnboardTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">BackendImportviaCollection</span>
-                <br/>
-                <span class="ignored-method-name">ImportOptionVisible</span>
-                <br/>
-                <span class="ignored-method-name">readMoreClickable</span>
-                <br/>
-                <span class="ignored-method-name">InstantImportViatype</span>
-                <br/>
-                <span class="ignored-method-name">IfConsumeridIsgiven</span>
-                <br/>
-                <span class="ignored-method-name">verifyContactUS</span>
-                <br/>
-                <span class="ignored-method-name">SelectAllProduct</span>
-                <br/>
-                <span class="ignored-method-name">VerifyCategoryDropdown</span>
-                <br/>
-                <span class="ignored-method-name">InstantPublishImport</span>
-                <br/>
-                <span class="ignored-method-name">IfSecretKeyIsgiven</span>
-                <br/>
-                <span class="ignored-method-name">InstantImportViaCollection</span>
-                <br/>
-                <span class="ignored-method-name">SellerCenterClickable</span>
-                <br/>
-                <span class="ignored-method-name">InstantImportViaVendor</span>
-                <br/>
-                <span class="ignored-method-name">VerifyNextButtonByVendor</span>
-                <br/>
-                <span class="ignored-method-name">SelectAnyvendorandClickOnImport</span>
-                <br/>
-                <span class="ignored-method-name">VerifyNextButtonPublish</span>
-                <br/>
-                <span class="ignored-method-name">VerifyClickHereLink</span>
-                <br/>
-                <span class="ignored-method-name">selectCollection</span>
-                <br/>
-                <span class="ignored-method-name">PublishBackendImport</span>
+                <span class="ignored-method-name">VerifyNextButtonAllProduct</span>
                 <br/>
                 <span class="ignored-method-name">uncheckCheckBox</span>
                 <br/>
-                <span class="ignored-method-name">InstantAllImport</span>
+                <span class="ignored-method-name">selectProductType</span>
                 <br/>
                 <span class="ignored-method-name">selectProductVendor</span>
+                <br/>
+                <span class="ignored-method-name">SelectAnyvendorandClickOnImport</span>
+                <br/>
+                <span class="ignored-method-name">selectCollection</span>
+                <br/>
+                <span class="ignored-method-name">BackendImportviaType</span>
+                <br/>
+                <span class="ignored-method-name">checkCheckBox</span>
+                <br/>
+                <span class="ignored-method-name">InstantImportViaVendor</span>
+                <br/>
+                <span class="ignored-method-name">VerifyValidationtext</span>
+                <br/>
+                <span class="ignored-method-name">VerifyNextButtonPublish</span>
+                <br/>
+                <span class="ignored-method-name">InstantAllImport</span>
+                <br/>
+                <span class="ignored-method-name">VerifyCategoryDropdown</span>
+                <br/>
+                <span class="ignored-method-name">readMoreClickable</span>
                 <br/>
                 <span class="ignored-method-name">SelectAnyCollectionandClickOnImport</span>
                 <br/>
                 <span class="ignored-method-name">SelectAnytypeandClickOnImport</span>
                 <br/>
-                <span class="ignored-method-name">VerifyNextButtonAllProduct</span>
+                <span class="ignored-method-name">BackendImportviaCollection</span>
                 <br/>
-                <span class="ignored-method-name">VerifyNextButtonByCollection</span>
-                <br/>
-                <span class="ignored-method-name">selectProductType</span>
+                <span class="ignored-method-name">SelectAllProduct</span>
                 <br/>
                 <span class="ignored-method-name">SelectPublishProduct</span>
                 <br/>
-                <span class="ignored-method-name">BothInvalid</span>
+                <span class="ignored-method-name">InstantPublishImport</span>
                 <br/>
-                <span class="ignored-method-name">checkCheckBox</span>
+                <span class="ignored-method-name">SellerCenterClickable</span>
                 <br/>
-                <span class="ignored-method-name">VerifyValidationtext</span>
+                <span class="ignored-method-name">InstantImportViatype</span>
                 <br/>
-                <span class="ignored-method-name">BackendImportviaVendor</span>
+                <span class="ignored-method-name">ImportOptionVisible</span>
+                <br/>
+                <span class="ignored-method-name">PublishBackendImport</span>
                 <br/>
                 <span class="ignored-method-name">ClickOnApplyFilter</span>
                 <br/>
-                <span class="ignored-method-name">BackendImportviaType</span>
+                <span class="ignored-method-name">VerifyNextButtonByVendor</span>
+                <br/>
+                <span class="ignored-method-name">VerifyClickHereLink</span>
+                <br/>
+                <span class="ignored-method-name">InstantImportViaCollection</span>
+                <br/>
+                <span class="ignored-method-name">IfConsumeridIsgiven</span>
+                <br/>
+                <span class="ignored-method-name">verifyContactUS</span>
+                <br/>
+                <span class="ignored-method-name">BackendImportviaVendor</span>
+                <br/>
+                <span class="ignored-method-name">BothInvalid</span>
+                <br/>
+                <span class="ignored-method-name">IfSecretKeyIsgiven</span>
+                <br/>
+                <span class="ignored-method-name">VerifyNextButtonByCollection</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -367,19 +389,21 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">BothValid</span>
-                <span class="method-start">53546 ms</span>
+                <span class="method-start">65080 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">VerifyNextButtonBytype</span>
-                <span class="method-start">64401 ms</span>
+                <span class="method-start">73545 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">AllBackendImport</span>
-                <span class="method-start">162121 ms</span>
+                <span class="method-start">101475 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">VerifyValidationForRequiredAttributes</span>
-                <span class="method-start">188277 ms</span>
+                <span class="method-start">130138 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -59,16 +59,34 @@ public class OnboardStep3Object extends utilities {
 	}
 
 	public void clickFinish() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		WebElementClick(finishbtn, "Clicked on finish button");
 	}
 
 	public String PopUPText() {
 		WaittillvisibilityOfElementLocated(popup);
-		String text = driver.findElement(popup).getText();
-		Listeners.test.log(Status.INFO, "Validation text - " + text);
-		return text;
+		String text = " ";
+		try {
+			 text = driver.findElement(popup).getText();
+			Listeners.test.log(Status.INFO, "Validation text - " + text);
+			return text;
+		}catch(Exception e){
+			return text;
+		}
+		
 	}
 
 	public String[] verifyFinishBtn() {
@@ -85,8 +103,17 @@ public class OnboardStep3Object extends utilities {
 		String[] arr = { txt, url };
 		return arr;
 	}
+	
+	public void urlCheck() {
+		String n = getpageUrl();
+		if(!(n.contains("sHopiFy=3"))) {
+			changeURL();
+		}
+	}
 
-	public void VerifyvalidationforAttributes(String[] category) {
+	public ArrayList<String> VerifyvalidationforAttributes(String[] category) {
+		urlCheck();
+		Listeners.test.log(Status.INFO, "Check whether the popup is showing or not if required attribute is empty");
 		ArrayList<String> arr1 = new ArrayList<String>();
 		for (int x = 0; x < category.length; x++) {
 			try {
@@ -98,7 +125,9 @@ public class OnboardStep3Object extends utilities {
 			ArrayList<WebElement> option = openDropdown();
 			for (int i = 0; i < option.size(); i++) {
 				if (option.get(i).getText().contains(category[x])) {
+					Listeners.test.log(Status.INFO, "clicked on - "+option.get(i).getText());
 					option.get(i).click();
+					
 					break;
 				}
 			}
@@ -106,8 +135,9 @@ public class OnboardStep3Object extends utilities {
 			String text = PopUPText();
 			if (!(text.contains("is required"))) {
 				arr1.add(category[x]);
+				Listeners.test.log(Status.FAIL, "Not showing Validation message for +"+category[x]);
 			}
 		}
-
+		return arr1;
 	}
 }

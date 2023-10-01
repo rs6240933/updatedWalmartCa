@@ -380,7 +380,10 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 38)
 	public void VerifyValidationForRequiredAttributes() {
-		String[] category = {"Tires", "Movies"};
-		obj3.VerifyvalidationforAttributes(category);
+		String[] category = {"Tires", "Movies", "Animal Other"};
+		ArrayList<String> arr1 = obj3.VerifyvalidationforAttributes(category);
+		if(arr1.size() > 0) {
+			Assert.assertEquals(false, "Validation message is not showing for some categories");
+		}
 	}
 }
