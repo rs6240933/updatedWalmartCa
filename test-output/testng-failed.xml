@@ -8,7 +8,7 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
-          <include name="InstantImportViaVendor"/>
+          <include name="VerifyValidationForRequiredAttributes"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>

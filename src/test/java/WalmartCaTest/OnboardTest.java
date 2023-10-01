@@ -223,7 +223,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 23, enabled = false))
+	@Test(priority = 23, enabled = false)
 	public void InstantImportViaVendor() throws InterruptedException {
 		String arr1 = obj2.InstantImport(1);
 		if (arr1.contains("imported successfully")) {
@@ -285,7 +285,7 @@ public class OnboardTest extends Baseclass {
 		}
 	}
 
-	@Test(priority = 28, enabled = false)
+	@Test(priority = 28)
 	public void VerifyNextButtonBytype() {
 		this.obj3 = obj2.ClickOnNextButtonForAllFilters(0);
 		String text = obj3.verifyurl();

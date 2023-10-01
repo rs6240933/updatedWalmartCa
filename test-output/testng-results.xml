@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-30T19:27:29 IST" name="Suite" finished-at="2023-09-30T19:29:54 IST" duration-ms="145393">
+  <suite started-at="2023-10-01T21:48:36 IST" name="Suite" finished-at="2023-10-01T21:51:48 IST" duration-ms="191681">
     <groups>
     </groups>
-    <test started-at="2023-09-30T19:27:29 IST" name="Test" finished-at="2023-09-30T19:29:54 IST" duration-ms="145393">
+    <test started-at="2023-10-01T21:48:36 IST" name="Test" finished-at="2023-10-01T21:51:48 IST" duration-ms="191681">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@38145825]" started-at="2023-09-30T19:27:29 IST" name="VerifyStep1Link" finished-at="2023-09-30T19:28:17 IST" duration-ms="48323" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:48:36 IST" name="VerifyStep1Link" finished-at="2023-10-01T21:49:30 IST" duration-ms="53537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@38145825]" started-at="2023-09-30T19:28:17 IST" name="BothValid" finished-at="2023-09-30T19:28:25 IST" duration-ms="7836" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:49:30 IST" name="BothValid" finished-at="2023-10-01T21:49:41 IST" duration-ms="10852" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="InstantImportViaVendor()[pri:23, instance:WalmartCaTest.OnboardTest@38145825]" started-at="2023-09-30T19:28:25 IST" name="InstantImportViaVendor" finished-at="2023-09-30T19:29:54 IST" duration-ms="89156" status="PASS">
+        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:49:41 IST" name="VerifyNextButtonBytype" finished-at="2023-10-01T21:51:18 IST" duration-ms="97717" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InstantImportViaVendor -->
+        </test-method> <!-- VerifyNextButtonBytype -->
+        <test-method signature="AllBackendImport()[pri:35, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:51:18 IST" name="AllBackendImport" finished-at="2023-10-01T21:51:44 IST" duration-ms="26153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AllBackendImport -->
+        <test-method signature="VerifyValidationForRequiredAttributes()[pri:38, instance:WalmartCaTest.OnboardTest@3e0e1046]" started-at="2023-10-01T21:51:44 IST" name="VerifyValidationForRequiredAttributes" finished-at="2023-10-01T21:51:48 IST" duration-ms="3329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyValidationForRequiredAttributes -->
       </class> <!-- WalmartCaTest.OnboardTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

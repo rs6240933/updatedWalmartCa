@@ -20,7 +20,7 @@ public class OnboardStep3Object extends utilities {
 	By categoryOptions = By.xpath("//ul[@id='select2-root_category-results']/li");
 	@FindBy(id = "next_new")
 	WebElement finishbtn;
-	By popup = By.xpath("//div[@id='noty_layout__bottomCenter']/div/div");)
+	By popup = By.xpath("//div[@id='noty_layout__bottomCenter']/div/div");
 	
 	
 
@@ -86,7 +86,12 @@ public class OnboardStep3Object extends utilities {
 	}
 	
 	public void VerifyvalidationforAttributes() {
-		 refresh();
+		 try {
+			refresh();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 ArrayList<WebElement> option =  openDropdown();
 		 for(int i = 0; i < option.size(); i++) {
 			 if(option.get(i).getText().contains("Tires")) {
