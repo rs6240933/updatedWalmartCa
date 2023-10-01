@@ -3,6 +3,7 @@ package WalmartCa.PageObjects;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,8 +22,6 @@ public class OnboardStep3Object extends utilities {
 	@FindBy(id = "next_new")
 	WebElement finishbtn;
 	By popup = By.xpath("//div[@id='noty_layout__bottomCenter']/div/div");
-	
-	
 
 	public OnboardStep3Object(WebDriver driver) {
 		super(driver);
@@ -60,16 +59,18 @@ public class OnboardStep3Object extends utilities {
 	}
 
 	public void clickFinish() {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		WebElementClick(finishbtn, "Clicked on finish button");
 	}
 
 	public String PopUPText() {
 		WaittillvisibilityOfElementLocated(popup);
 		String text = driver.findElement(popup).getText();
-		Listeners.test.log(Status.INFO, "Validation text - "+ text);
+		Listeners.test.log(Status.INFO, "Validation text - " + text);
 		return text;
 	}
-	
+
 	public String[] verifyFinishBtn() {
 		try {
 			refresh();
@@ -81,23 +82,32 @@ public class OnboardStep3Object extends utilities {
 		clickFinish();
 		String url = getpageUrl();
 		String txt = PopUPText();
-		String[] arr = {txt, url};
+		String[] arr = { txt, url };
 		return arr;
 	}
-	
-	public void VerifyvalidationforAttributes() {
-		 try {
-			refresh();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+	public void VerifyvalidationforAttributes(String[] category) {
+		ArrayList<String> arr1 = new ArrayList<String>();
+		for (int x = 0; x < category.length; x++) {
+			try {
+				refresh();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			ArrayList<WebElement> option = openDropdown();
+			for (int i = 0; i < option.size(); i++) {
+				if (option.get(i).getText().contains(category[x])) {
+					option.get(i).click();
+					break;
+				}
+			}
+			clickFinish();
+			String text = PopUPText();
+			if (!(text.contains("is required"))) {
+				arr1.add(category[x]);
+			}
 		}
-		 ArrayList<WebElement> option =  openDropdown();
-		 for(int i = 0; i < option.size(); i++) {
-			 if(option.get(i).getText().contains("Tires")) {
-				 option.get(i).click();
-				 break;
-			 }
-		 }
+
 	}
 }

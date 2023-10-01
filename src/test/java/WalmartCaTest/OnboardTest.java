@@ -380,6 +380,7 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 38)
 	public void VerifyValidationForRequiredAttributes() {
-		obj3.VerifyvalidationforAttributes();
+		String[] category = {"Tires", "Movies"};
+		obj3.VerifyvalidationforAttributes(category);
 	}
 }
