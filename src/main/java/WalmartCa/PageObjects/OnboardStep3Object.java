@@ -35,6 +35,10 @@ public class OnboardStep3Object extends utilities {
 	By Welcome = By.xpath("//div[@class='Polaris-Header-Title']/h1");
 	@FindBy (xpath = "(//li[@class='Polaris-Navigation__ListItem'])[2]/a")
 	WebElement profilelink;
+	@FindBy (id = "LoadingMSG")
+	WebElement loader;
+	
+	
 
 	public OnboardStep3Object(WebDriver driver) {
 		super(driver);
@@ -72,12 +76,6 @@ public class OnboardStep3Object extends utilities {
 	}
 
 	public void clickFinish() {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		try {
@@ -144,6 +142,7 @@ public class OnboardStep3Object extends utilities {
 					break;
 				}
 			}
+			WaitForAttribute(loader);
 			clickFinish();
 			String text = PopUPText();
 			if (!(text.contains("is required"))) {
@@ -170,7 +169,7 @@ public class OnboardStep3Object extends utilities {
 			e.printStackTrace();
 		}
 		WebElementClick(skipCheckBox, "Clicked on skip check box");
-		WaitForAttribute(skipDiv);
+		WaitForAttribute2(skipDiv);
 		return skipBtn.getText();
 	}
 	
@@ -182,6 +181,7 @@ public class OnboardStep3Object extends utilities {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		WaitForAttribute(loader);
 		Listeners.test.log(Status.INFO, "verify if skip checkbox is checked then Skip and continue button is visible or not");
 		return SkipandContinueBtn();
 	}
@@ -194,8 +194,11 @@ public class OnboardStep3Object extends utilities {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		WaitForAttribute(loader);
 		Listeners.test.log(Status.INFO, "verify by clicking on Skip and continue button it is redirecting to the dashboard and no default profile is creating");
 		SkipandContinueBtn();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		WebElementClick(skipBtn, "Clicked oN Skip & Continue");
 		WebElementClick(popUp, "Comfirmation popup is displayed");
 		Listeners.test.log(Status.INFO, "Clicked Ok");

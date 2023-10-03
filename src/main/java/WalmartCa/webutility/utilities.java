@@ -68,6 +68,16 @@ public class utilities {
 		}
 		
 	}
+	public void WaitForAttribute2(WebElement ele) {
+		WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(60));
+		try {
+			waiter.until(ExpectedConditions.attributeToBe(ele, "display", "block"));
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public void waitforClickableBywebElement(WebElement FindElement) {
 		try {
