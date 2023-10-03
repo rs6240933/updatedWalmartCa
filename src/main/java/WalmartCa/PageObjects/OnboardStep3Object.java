@@ -22,6 +22,19 @@ public class OnboardStep3Object extends utilities {
 	@FindBy(id = "next_new")
 	WebElement finishbtn;
 	By popup = By.xpath("//div[@id='noty_layout__bottomCenter']/div/div");
+	@FindBy (id="skipAndContinue")
+	WebElement skipDiv;
+	@FindBy (xpath = "//div[@id='skipAndContinue']/button")
+	WebElement skipBtn;
+	@FindBy (xpath = "//label[@for='Checkbox1']/span/span")
+	WebElement skipCheckBox;
+	@FindBy (xpath = "//div[@class='row']/div/h3")
+	WebElement NoProfile;
+	@FindBy (id = "popup-confirm")
+	WebElement popUp;
+	By Welcome = By.xpath("//div[@class='Polaris-Header-Title']/h1");
+	@FindBy (xpath = "(//li[@class='Polaris-Navigation__ListItem'])[2]/a")
+	WebElement profilelink;
 
 	public OnboardStep3Object(WebDriver driver) {
 		super(driver);
@@ -60,7 +73,7 @@ public class OnboardStep3Object extends utilities {
 
 	public void clickFinish() {
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -139,5 +152,64 @@ public class OnboardStep3Object extends utilities {
 			}
 		}
 		return arr1;
+	}
+	
+	public String SkipandContinueBtn() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebElementClick(skipCheckBox, "Clicked on skip check box");
+		WaitForAttribute(skipDiv);
+		return skipBtn.getText();
+	}
+	
+	public String VerifySkipandContinueBtn() {
+		urlCheck();
+		try {
+			refresh();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Listeners.test.log(Status.INFO, "verify if skip checkbox is checked then Skip and continue button is visible or not");
+		return SkipandContinueBtn();
+	}
+	
+	public String VerifySkipandContinueurl() {
+		urlCheck();
+		try {
+			refresh();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Listeners.test.log(Status.INFO, "verify by clicking on Skip and continue button it is redirecting to the dashboard and no default profile is creating");
+		SkipandContinueBtn();
+		WebElementClick(skipBtn, "Clicked oN Skip & Continue");
+		WebElementClick(popUp, "Comfirmation popup is displayed");
+		Listeners.test.log(Status.INFO, "Clicked Ok");
+		GoToProfile();
+		if(NoProfile.isDisplayed()) {
+			Listeners.test.log(Status.PASS, "No Profile is present");
+			return "No Profile is present";
+		}else {
+			return "Profile is present";
+		}
+	}
+	
+	public void GoToProfile() {
+		WaittillvisibilityOfElementLocated(Welcome); 
+		WebElementClick(profilelink, "Clicked oN Profile Link");
 	}
 }
