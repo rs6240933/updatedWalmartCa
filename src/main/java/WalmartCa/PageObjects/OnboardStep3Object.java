@@ -37,9 +37,16 @@ public class OnboardStep3Object extends utilities {
 	WebElement profilelink;
 	@FindBy (id = "LoadingMSG")
 	WebElement loader;
+	@FindBy (id = "TextField1")
+	WebElement taxcode;
+	By variantAttr = By.xpath("(//tbody)[2]/tr");
+	By grid = By.xpath("//tbody/tr");
+	@FindBy (xpath = "//button[@class='Polaris-Button Polaris-Button--iconOnly']")
+	WebElement actions;
+	@FindBy (xpath = "(//ul[@class='Polaris-Navigation__Section'])[2]/li[2]/a")
+	WebElement edit;
+	By heading = By.xpath("//div[@class='Polaris-Header-Title']/h1");
 	
-	
-
 	public OnboardStep3Object(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -214,5 +221,67 @@ public class OnboardStep3Object extends utilities {
 	public void GoToProfile() {
 		WaittillvisibilityOfElementLocated(Welcome); 
 		WebElementClick(profilelink, "Clicked oN Profile Link");
+	}
+	
+	public void createDefaultProfile() {
+		urlCheck();
+		Listeners.test.log(Status.INFO, "Check by creating default profile then verify whether all the attribute value is showing correctly at profile section");
+		ArrayList<WebElement> option = openDropdown();
+		for (int i = 0; i < option.size(); i++) {
+			if (option.get(i).getText().contains("Beauty, Personal Care, & Hygiene")) {
+				Listeners.test.log(Status.INFO, "clicked on - "+option.get(i).getText());
+				option.get(i).click();
+				break;
+			}
+		}
+		WaitForAttribute(loader);
+		EnterText(taxcode, "1234567");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		String[] walmart_arr = new String[4];
+		String[] shopify_arr = new String[4];
+		ArrayList<WebElement> attributes = new ArrayList<WebElement>(driver.findElements(variantAttr));
+		for(int i=0; i < attributes.size(); i++) {
+			if(i > 3) {
+				break;
+			}
+			
+			String walmart = driver.findElement(By.xpath("(((//tbody)[2]/tr)["+(i+1)+"]/td)[1]/p")).getText();
+			String shopify = driver.findElement(By.xpath("(//select)["+(i+2)+"]/option[1]")).getText();
+			driver.findElement(By.xpath("(//select)["+(i+2)+"]/option[1]")).click();		
+			Listeners.test.log(Status.INFO, "selected "+shopify+"  for Walmart attribute "+walmart);
+			 walmart_arr[i] = walmart;
+			 shopify_arr[i] = shopify;
+		}
+		for(int a=0; a < walmart_arr.length; a++) {
+			System.out.println(walmart_arr[a]+" = "+shopify_arr[a]);
+		}
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		WebElementClick(finishbtn, "Clicked oN Finish Button");
+		GoToProfile();
+		try {
+			ArrayList<WebElement> profiles = new ArrayList<WebElement>(driver.findElements(grid));
+			WebElementClick(actions, "Clicked oN actions button");
+			WebElementClick(edit, "Clicked oN edit button");
+			WaittillvisibilityOfElementLocated(heading);
+			String[] walmart_arr1 = new String[4];
+			String[] shopify_arr1 = new String[4];
+			for(int i=0; i < attributes.size(); i++) {
+				if(i > 3) {
+					break;
+				}
+				
+				String walmart_app = driver.findElement(By.xpath("(((//tbody)[2]/tr)["+(i+1)+"]/td)[1]/p")).getText();
+				String shopify_app = driver.findElement(By.xpath("(//select)["+(i+2)+"]/option")).getText();	
+				Listeners.test.log(Status.INFO, "selected under app "+shopify_app+"  for Walmart attribute "+walmart_app);
+				 walmart_arr1[i] = walmart_app;
+				 shopify_arr1[i] = shopify_app;
+			}
+		}catch(Exception e) {
+			Listeners.test.log(Status.FAIL, "Default Profile is not showing");
+			e.printStackTrace();
+		}
+		
+		
 	}
 }

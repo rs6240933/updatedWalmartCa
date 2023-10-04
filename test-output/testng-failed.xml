@@ -8,10 +8,7 @@
     <classes>
       <class name="WalmartCaTest.OnboardTest">
         <methods>
-          <include name="CheckSkipandContinueBtnisVisible"/>
-          <include name="CheckSkipandContinueBtnisredirecting"/>
-          <include name="VerifyValidationForRequiredAttributes"/>
-          <include name="BothValid"/>
+          <include name="verifyDefaultProfile"/>
           <include name="VerifyNextButtonBytype"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->

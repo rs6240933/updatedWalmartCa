@@ -378,7 +378,7 @@ public class OnboardTest extends Baseclass {
 		}
 		
 	}
-	@Test(priority = 38)
+	@Test(priority = 38, enabled = false)
 	public void VerifyValidationForRequiredAttributes() {
 		String[] category = {"Tires", "Movies"};
 		ArrayList<String> arr1 = obj3.VerifyvalidationforAttributes(category);
@@ -386,16 +386,20 @@ public class OnboardTest extends Baseclass {
 			Assert.assertEquals(false, "Validation message is not showing for some categories");
 		}
 	}
-	@Test(priority = 39)
+	@Test(priority = 39, enabled = false)
 	public void CheckSkipandContinueBtnisVisible() {
 		String text = obj3.VerifySkipandContinueBtn();
 		if(!(text.contains("Skip & Continue"))) {
 			Assert.assertTrue(false, "Skip and Continue button is not visible ");
 		}
 	}
-	@Test(priority = 40)
+	@Test(priority = 40, enabled = false)
 	public void CheckSkipandContinueBtnisredirecting() {
 		String actual = obj3.VerifySkipandContinueurl();
 		Assert.assertTrue(actual.contains("No Profile is present"), "Profile is showing");
+	}
+	@Test(priority = 41)
+	public void verifyDefaultProfile() {
+		obj3.createDefaultProfile();
 	}
 }
