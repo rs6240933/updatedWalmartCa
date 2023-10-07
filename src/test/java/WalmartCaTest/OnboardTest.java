@@ -400,6 +400,9 @@ public class OnboardTest extends Baseclass {
 	}
 	@Test(priority = 41)
 	public void verifyDefaultProfile() {
-		obj3.createDefaultProfile();
+		int count = obj3.createDefaultProfile();
+		if(count < 1) {
+			Assert.assertTrue(false, "Test failded");
+		}
 	}
 }

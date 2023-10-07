@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-04T22:12:18 IST" name="Suite" finished-at="2023-10-04T22:14:26 IST" duration-ms="128685">
+  <suite started-at="2023-10-07T20:57:04 IST" name="Suite" finished-at="2023-10-07T20:59:11 IST" duration-ms="127074">
     <groups>
     </groups>
-    <test started-at="2023-10-04T22:12:18 IST" name="Test" finished-at="2023-10-04T22:14:26 IST" duration-ms="128685">
+    <test started-at="2023-10-07T20:57:04 IST" name="Test" finished-at="2023-10-07T20:59:11 IST" duration-ms="127074">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-04T22:12:18 IST" name="VerifyStep1Link" finished-at="2023-10-04T22:13:23 IST" duration-ms="64980" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@7dfd3c81]" started-at="2023-10-07T20:57:04 IST" name="VerifyStep1Link" finished-at="2023-10-07T20:58:06 IST" duration-ms="62029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-04T22:13:23 IST" name="BothValid" finished-at="2023-10-04T22:13:30 IST" duration-ms="7392" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@7dfd3c81]" started-at="2023-10-07T20:58:06 IST" name="BothValid" finished-at="2023-10-07T20:58:14 IST" duration-ms="7114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-04T22:13:30 IST" name="VerifyNextButtonBytype" finished-at="2023-10-04T22:14:05 IST" duration-ms="34478" status="PASS">
+        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@7dfd3c81]" started-at="2023-10-07T20:58:14 IST" name="VerifyNextButtonBytype" finished-at="2023-10-07T20:58:41 IST" duration-ms="27762" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyNextButtonBytype -->
-        <test-method signature="verifyDefaultProfile()[pri:41, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-04T22:14:05 IST" name="verifyDefaultProfile" finished-at="2023-10-04T22:14:26 IST" duration-ms="21720" status="PASS">
+        <test-method signature="verifyDefaultProfile()[pri:41, instance:WalmartCaTest.OnboardTest@7dfd3c81]" started-at="2023-10-07T20:58:41 IST" name="verifyDefaultProfile" finished-at="2023-10-07T20:59:11 IST" duration-ms="30053" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDefaultProfile -->

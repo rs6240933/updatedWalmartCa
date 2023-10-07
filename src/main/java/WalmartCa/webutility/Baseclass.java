@@ -1,13 +1,17 @@
 package WalmartCa.webutility;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -64,5 +68,12 @@ public class Baseclass {
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Tester", "Rishabh");
 		return extent;
+	}
+	public String getScreenShot(String name) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot)driverr;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File(System.getProperty("user.dir")+"//reports//"+name+".png");
+		FileHandler.copy(source, file);
+		return System.getProperty("user.dir")+"//reports//"+name+".png";
 	}
 }

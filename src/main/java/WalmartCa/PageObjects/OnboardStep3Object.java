@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 
@@ -22,31 +23,31 @@ public class OnboardStep3Object extends utilities {
 	@FindBy(id = "next_new")
 	WebElement finishbtn;
 	By popup = By.xpath("//div[@id='noty_layout__bottomCenter']/div/div");
-	@FindBy (id="skipAndContinue")
+	@FindBy(id = "skipAndContinue")
 	WebElement skipDiv;
-	@FindBy (xpath = "//div[@id='skipAndContinue']/button")
+	@FindBy(xpath = "//div[@id='skipAndContinue']/button")
 	WebElement skipBtn;
-	@FindBy (xpath = "//label[@for='Checkbox1']/span/span")
+	@FindBy(xpath = "//label[@for='Checkbox1']/span/span")
 	WebElement skipCheckBox;
-	@FindBy (xpath = "//div[@class='row']/div/h3")
+	@FindBy(xpath = "//div[@class='row']/div/h3")
 	WebElement NoProfile;
-	@FindBy (id = "popup-confirm")
+	@FindBy(id = "popup-confirm")
 	WebElement popUp;
 	By Welcome = By.xpath("//div[@class='Polaris-Header-Title']/h1");
-	@FindBy (xpath = "(//li[@class='Polaris-Navigation__ListItem'])[2]/a")
+	@FindBy(xpath = "(//li[@class='Polaris-Navigation__ListItem'])[2]/a")
 	WebElement profilelink;
-	@FindBy (id = "LoadingMSG")
+	@FindBy(id = "LoadingMSG")
 	WebElement loader;
-	@FindBy (id = "TextField1")
+	@FindBy(id = "TextField1")
 	WebElement taxcode;
 	By variantAttr = By.xpath("(//tbody)[2]/tr");
 	By grid = By.xpath("//tbody/tr");
-	@FindBy (xpath = "//button[@class='Polaris-Button Polaris-Button--iconOnly']")
+	@FindBy(xpath = "//button[@class='Polaris-Button Polaris-Button--iconOnly']")
 	WebElement actions;
-	@FindBy (xpath = "(//ul[@class='Polaris-Navigation__Section'])[2]/li[2]/a")
+	@FindBy(xpath = "(//ul[@class='Polaris-Navigation__Section'])[2]/li[2]/a")
 	WebElement edit;
 	By heading = By.xpath("//div[@class='Polaris-Header-Title']/h1");
-	
+
 	public OnboardStep3Object(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -98,13 +99,13 @@ public class OnboardStep3Object extends utilities {
 		WaittillvisibilityOfElementLocated(popup);
 		String text = " ";
 		try {
-			 text = driver.findElement(popup).getText();
+			text = driver.findElement(popup).getText();
 			Listeners.test.log(Status.INFO, "Validation text - " + text);
 			return text;
-		}catch(Exception e){
+		} catch (Exception e) {
 			return text;
 		}
-		
+
 	}
 
 	public String[] verifyFinishBtn() {
@@ -121,10 +122,10 @@ public class OnboardStep3Object extends utilities {
 		String[] arr = { txt, url };
 		return arr;
 	}
-	
+
 	public void urlCheck() {
 		String n = getpageUrl();
-		if(!(n.contains("sHopiFy=3"))) {
+		if (!(n.contains("sHopiFy=3"))) {
 			changeURL();
 		}
 	}
@@ -143,9 +144,9 @@ public class OnboardStep3Object extends utilities {
 			ArrayList<WebElement> option = openDropdown();
 			for (int i = 0; i < option.size(); i++) {
 				if (option.get(i).getText().contains(category[x])) {
-					Listeners.test.log(Status.INFO, "clicked on - "+option.get(i).getText());
+					Listeners.test.log(Status.INFO, "clicked on - " + option.get(i).getText());
 					option.get(i).click();
-					
+
 					break;
 				}
 			}
@@ -154,12 +155,12 @@ public class OnboardStep3Object extends utilities {
 			String text = PopUPText();
 			if (!(text.contains("is required"))) {
 				arr1.add(category[x]);
-				Listeners.test.log(Status.FAIL, "Not showing Validation message for +"+category[x]);
+				Listeners.test.log(Status.FAIL, "Not showing Validation message for +" + category[x]);
 			}
 		}
 		return arr1;
 	}
-	
+
 	public String SkipandContinueBtn() {
 		try {
 			Thread.sleep(2000);
@@ -179,7 +180,7 @@ public class OnboardStep3Object extends utilities {
 		WaitForAttribute2(skipDiv);
 		return skipBtn.getText();
 	}
-	
+
 	public String VerifySkipandContinueBtn() {
 		urlCheck();
 		try {
@@ -189,10 +190,11 @@ public class OnboardStep3Object extends utilities {
 			e.printStackTrace();
 		}
 		WaitForAttribute(loader);
-		Listeners.test.log(Status.INFO, "verify if skip checkbox is checked then Skip and continue button is visible or not");
+		Listeners.test.log(Status.INFO,
+				"verify if skip checkbox is checked then Skip and continue button is visible or not");
 		return SkipandContinueBtn();
 	}
-	
+
 	public String VerifySkipandContinueurl() {
 		urlCheck();
 		try {
@@ -202,7 +204,8 @@ public class OnboardStep3Object extends utilities {
 			e.printStackTrace();
 		}
 		WaitForAttribute(loader);
-		Listeners.test.log(Status.INFO, "verify by clicking on Skip and continue button it is redirecting to the dashboard and no default profile is creating");
+		Listeners.test.log(Status.INFO,
+				"verify by clicking on Skip and continue button it is redirecting to the dashboard and no default profile is creating");
 		SkipandContinueBtn();
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
@@ -210,28 +213,33 @@ public class OnboardStep3Object extends utilities {
 		WebElementClick(popUp, "Comfirmation popup is displayed");
 		Listeners.test.log(Status.INFO, "Clicked Ok");
 		GoToProfile();
-		if(NoProfile.isDisplayed()) {
+		if (NoProfile.isDisplayed()) {
 			Listeners.test.log(Status.PASS, "No Profile is present");
 			return "No Profile is present";
-		}else {
+		} else {
 			return "Profile is present";
 		}
 	}
-	
+
 	public void GoToProfile() {
-		WaittillvisibilityOfElementLocated(Welcome); 
+		WaittillvisibilityOfElementLocated(Welcome);
 		WebElementClick(profilelink, "Clicked oN Profile Link");
 	}
-	
-	public void createDefaultProfile() {
+
+	public int createDefaultProfile() {
+		int counter = 0;
 		urlCheck();
-		Listeners.test.log(Status.INFO, "Check by creating default profile then verify whether all the attribute value is showing correctly at profile section");
+		Listeners.test.log(Status.INFO,
+				"Check by creating default profile then verify whether all the attribute value is showing correctly at profile section");
 		ArrayList<WebElement> option = openDropdown();
 		for (int i = 0; i < option.size(); i++) {
-			if (option.get(i).getText().contains("Beauty, Personal Care, & Hygiene")) {
-				Listeners.test.log(Status.INFO, "clicked on - "+option.get(i).getText());
+			if (option.get(i).getText().contains("Beauty, Personal Care, & Hygienee")) {
+				Listeners.test.log(Status.INFO, "clicked on - " + option.get(i).getText());
 				option.get(i).click();
 				break;
+			}
+			if(i == (option.size()- 1)) {
+				Listeners.test.log(Status.FAIL, "No such category present");
 			}
 		}
 		WaitForAttribute(loader);
@@ -241,20 +249,20 @@ public class OnboardStep3Object extends utilities {
 		String[] walmart_arr = new String[4];
 		String[] shopify_arr = new String[4];
 		ArrayList<WebElement> attributes = new ArrayList<WebElement>(driver.findElements(variantAttr));
-		for(int i=0; i < attributes.size(); i++) {
-			if(i > 3) {
+		for (int i = 0; i < attributes.size(); i++) {
+			if (i > 3) {
 				break;
 			}
-			
-			String walmart = driver.findElement(By.xpath("(((//tbody)[2]/tr)["+(i+1)+"]/td)[1]/p")).getText();
-			String shopify = driver.findElement(By.xpath("(//select)["+(i+2)+"]/option[1]")).getText();
-			driver.findElement(By.xpath("(//select)["+(i+2)+"]/option[1]")).click();		
-			Listeners.test.log(Status.INFO, "selected "+shopify+"  for Walmart attribute "+walmart);
-			 walmart_arr[i] = walmart;
-			 shopify_arr[i] = shopify;
+
+			String walmart = driver.findElement(By.xpath("(((//tbody)[2]/tr)[" + (i + 1) + "]/td)[1]/p")).getText();
+			String shopify = driver.findElement(By.xpath("(//select)[" + (i + 2) + "]/option[1]")).getText();
+			driver.findElement(By.xpath("(//select)[" + (i + 2) + "]/option[1]")).click();
+			Listeners.test.log(Status.INFO, "selected " + shopify + "  for Walmart attribute " + walmart);
+			walmart_arr[i] = walmart;
+			shopify_arr[i] = shopify;
 		}
-		for(int a=0; a < walmart_arr.length; a++) {
-			System.out.println(walmart_arr[a]+" = "+shopify_arr[a]);
+		for (int a = 0; a < walmart_arr.length; a++) {
+			System.out.println(walmart_arr[a] + " = " + shopify_arr[a]);
 		}
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		WebElementClick(finishbtn, "Clicked oN Finish Button");
@@ -266,22 +274,45 @@ public class OnboardStep3Object extends utilities {
 			WaittillvisibilityOfElementLocated(heading);
 			String[] walmart_arr1 = new String[4];
 			String[] shopify_arr1 = new String[4];
-			for(int i=0; i < attributes.size(); i++) {
-				if(i > 3) {
+			for (int i = 0; i < attributes.size(); i++) {
+				if (i > 3) {
 					break;
 				}
-				
-				String walmart_app = driver.findElement(By.xpath("(((//tbody)[2]/tr)["+(i+1)+"]/td)[1]/p")).getText();
-				String shopify_app = driver.findElement(By.xpath("(//select)["+(i+2)+"]/option")).getText();	
-				Listeners.test.log(Status.INFO, "selected under app "+shopify_app+"  for Walmart attribute "+walmart_app);
-				 walmart_arr1[i] = walmart_app;
-				 shopify_arr1[i] = shopify_app;
+
+				String walmart_app = driver.findElement(By.xpath("(((//tbody)[2]/tr)[" + (i + 1) + "]/td)[1]/p"))
+						.getText();
+				String shopify_app = driver.findElement(By.xpath("(//select)[" + (i + 2) + "]/option")).getText();
+				walmart_arr1[i] = walmart_app;
+				shopify_arr1[i] = shopify_app;
+
 			}
-		}catch(Exception e) {
+			
+			if (walmart_arr.length > 1 && shopify_arr.length > 1 && walmart_arr1.length > 1
+					&& shopify_arr1.length > 1) {
+				for (int x = 0; x < walmart_arr.length; x++) {
+					if (walmart_arr[x].contains(walmart_arr1[x])) {
+						if (shopify_arr[x].contains(shopify_arr1[x])) {
+							Listeners.test.log(Status.PASS,
+									"For attribute " + walmart_arr[x] + " At onboarding, shopify attribute "
+											+ shopify_arr1[x]
+											+ " is given which is correctly showing under default profile");
+							counter++;
+						} else {
+							Listeners.test.log(Status.FAIL,
+									"For attribute " + walmart_arr[x] + " At onboarding, shopify attribute "
+											+ shopify_arr[x] + " is given which is not  showing under default profile");
+						}
+					} else {
+						Listeners.test.log(Status.FAIL,
+								"Failed");
+					}
+				}
+			}
+
+		} catch (Exception e) {
 			Listeners.test.log(Status.FAIL, "Default Profile is not showing");
 			e.printStackTrace();
 		}
-		
-		
+       return counter;
 	}
 }
