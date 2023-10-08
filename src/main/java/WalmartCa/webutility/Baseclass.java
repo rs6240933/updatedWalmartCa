@@ -69,11 +69,5 @@ public class Baseclass {
 		extent.setSystemInfo("Tester", "Rishabh");
 		return extent;
 	}
-//	public String getScreenShot(String testcasename) throws IOException{
-//		TakesScreenshot ts = (TakesScreenshot)driverr;
-//		File source = ts.getScreenshotAs(OutputType.FILE);
-//		File file = new File(System.getProperty("user.dir")+"//reports//"+ testcasename+".png");
-//		FileHandler.copy(source, file);
-//		return System.getProperty("user.dir")+"//reports//"+ testcasename+".png";
-//	}
+	
 }

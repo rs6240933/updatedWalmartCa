@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-07T23:23:14 IST" name="Suite" finished-at="2023-10-07T23:24:57 IST" duration-ms="103287">
+  <suite started-at="2023-10-08T11:33:11 IST" name="Suite" finished-at="2023-10-08T11:34:51 IST" duration-ms="99238">
     <groups>
     </groups>
-    <test started-at="2023-10-07T23:23:14 IST" name="Test" finished-at="2023-10-07T23:24:57 IST" duration-ms="103287">
+    <test started-at="2023-10-08T11:33:11 IST" name="Test" finished-at="2023-10-08T11:34:51 IST" duration-ms="99238">
       <class name="WalmartCaTest.OnboardTest">
-        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@4dc27487]" started-at="2023-10-07T23:23:14 IST" name="VerifyStep1Link" finished-at="2023-10-07T23:24:18 IST" duration-ms="63445" status="PASS">
+        <test-method signature="VerifyStep1Link()[pri:1, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-08T11:33:12 IST" name="VerifyStep1Link" finished-at="2023-10-08T11:34:09 IST" duration-ms="57531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyStep1Link -->
-        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@4dc27487]" started-at="2023-10-07T23:24:18 IST" name="BothValid" finished-at="2023-10-07T23:24:26 IST" duration-ms="8621" status="PASS">
+        <test-method signature="BothValid()[pri:11, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-08T11:34:09 IST" name="BothValid" finished-at="2023-10-08T11:34:16 IST" duration-ms="6684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BothValid -->
-        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@4dc27487]" started-at="2023-10-07T23:24:26 IST" name="VerifyNextButtonBytype" finished-at="2023-10-07T23:24:54 IST" duration-ms="27518" status="PASS">
+        <test-method signature="VerifyNextButtonBytype()[pri:28, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-08T11:34:16 IST" name="VerifyNextButtonBytype" finished-at="2023-10-08T11:34:48 IST" duration-ms="32088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyNextButtonBytype -->
-        <test-method signature="verifyDefaultProfile()[pri:41, instance:WalmartCaTest.OnboardTest@4dc27487]" started-at="2023-10-07T23:24:54 IST" name="verifyDefaultProfile" finished-at="2023-10-07T23:24:57 IST" duration-ms="3506" status="FAIL">
+        <test-method signature="verifyDefaultProfile()[pri:41, instance:WalmartCaTest.OnboardTest@6a4f1a55]" started-at="2023-10-08T11:34:48 IST" name="verifyDefaultProfile" finished-at="2023-10-08T11:34:51 IST" duration-ms="2798" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Test failded expected [true] but found [false]]]>
