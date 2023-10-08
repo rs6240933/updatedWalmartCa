@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="verifyDefaultProfile">verifyDefaultProfile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,11 +130,6 @@
                         <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="VerifyStep1Link">VerifyStep1Link</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="WalmartCaTest.OnboardTest" class="method navigator-link" hash-for-method="verifyDefaultProfile">verifyDefaultProfile</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -133,6 +142,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">WalmartCaTest.OnboardTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDefaultProfile">
+                  </a> <!-- verifyDefaultProfile -->
+                  <span class="method-name">verifyDefaultProfile</span>
+                  <div class="stack-trace">java.lang.AssertionError: Test failded expected [true] but found [false]
+	at WalmartCaTest.OnboardTest.verifyDefaultProfile(OnboardTest.java:405)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -158,13 +187,6 @@
                   <a name="VerifyStep1Link">
                   </a> <!-- VerifyStep1Link -->
                   <span class="method-name">VerifyStep1Link</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyDefaultProfile">
-                  </a> <!-- verifyDefaultProfile -->
-                  <span class="method-name">verifyDefaultProfile</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -228,24 +250,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'VerifyStep1Link')
 data.setCell(0, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(0, 3, 62029);
+data.setCell(0, 3, 63445);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyDefaultProfile')
+data.setCell(1, 1, 'VerifyNextButtonBytype')
 data.setCell(1, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(1, 3, 30053);
+data.setCell(1, 3, 27518);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'VerifyNextButtonBytype')
+data.setCell(2, 1, 'BothValid')
 data.setCell(2, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(2, 3, 27762);
+data.setCell(2, 3, 8621);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'BothValid')
+data.setCell(3, 1, 'verifyDefaultProfile')
 data.setCell(3, 2, 'WalmartCaTest.OnboardTest')
-data.setCell(3, 3, 7114);
+data.setCell(3, 3, 3506);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -270,13 +292,13 @@ return data;
                 <br/>
                 <span class="ignored-method-name">VerifyClickHereLink</span>
                 <br/>
-                <span class="ignored-method-name">VerifyCategoryDropdown</span>
-                <br/>
                 <span class="ignored-method-name">CheckSkipandContinueBtnisVisible</span>
                 <br/>
-                <span class="ignored-method-name">CheckSkipandContinueBtnisredirecting</span>
+                <span class="ignored-method-name">VerifyCategoryDropdown</span>
                 <br/>
                 <span class="ignored-method-name">VerifyValidationtext</span>
+                <br/>
+                <span class="ignored-method-name">CheckSkipandContinueBtnisredirecting</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -295,15 +317,17 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">BothValid</span>
-                <span class="method-start">62041 ms</span>
+                <span class="method-start">63495 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">VerifyNextButtonBytype</span>
-                <span class="method-start">69161 ms</span>
+                <span class="method-start">72141 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyDefaultProfile</span>
-                <span class="method-start">96925 ms</span>
+                <span class="method-start">99662 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

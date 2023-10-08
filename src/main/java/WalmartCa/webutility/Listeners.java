@@ -28,18 +28,18 @@ public class Listeners extends Baseclass implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		
-		String filePath = null;
-		
-		try {
-			
-			filePath = getScreenShot(result.getMethod().getMethodName());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
 		test.log(Status.FAIL, result.getThrowable());
+//		String filePath = null;
+//		
+//		try {
+//			
+//			filePath = getScreenShot(result.getMethod().getMethodName());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+		
 	}
 
 	@Override

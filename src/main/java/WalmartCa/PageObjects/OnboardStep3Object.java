@@ -233,15 +233,23 @@ public class OnboardStep3Object extends utilities {
 				"Check by creating default profile then verify whether all the attribute value is showing correctly at profile section");
 		ArrayList<WebElement> option = openDropdown();
 		for (int i = 0; i < option.size(); i++) {
+			if(counter > 1) {
+				break;
+			}
 			if (option.get(i).getText().contains("Beauty, Personal Care, & Hygienee")) {
 				Listeners.test.log(Status.INFO, "clicked on - " + option.get(i).getText());
 				option.get(i).click();
-				break;
+				counter = checkAttribute(counter);
 			}
 			if(i == (option.size()- 1)) {
 				Listeners.test.log(Status.FAIL, "No such category present");
 			}
 		}
+		return counter;
+	}
+
+	private int checkAttribute(int counter) {
+		int count = counter;
 		WaitForAttribute(loader);
 		EnterText(taxcode, "1234567");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -296,7 +304,7 @@ public class OnboardStep3Object extends utilities {
 									"For attribute " + walmart_arr[x] + " At onboarding, shopify attribute "
 											+ shopify_arr1[x]
 											+ " is given which is correctly showing under default profile");
-							counter++;
+							count++;
 						} else {
 							Listeners.test.log(Status.FAIL,
 									"For attribute " + walmart_arr[x] + " At onboarding, shopify attribute "
@@ -313,6 +321,8 @@ public class OnboardStep3Object extends utilities {
 			Listeners.test.log(Status.FAIL, "Default Profile is not showing");
 			e.printStackTrace();
 		}
-       return counter;
+       return count;
+		
 	}
+	
 }

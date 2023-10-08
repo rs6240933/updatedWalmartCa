@@ -9,7 +9,6 @@
       <class name="WalmartCaTest.OnboardTest">
         <methods>
           <include name="verifyDefaultProfile"/>
-          <include name="VerifyNextButtonBytype"/>
         </methods>
       </class> <!-- WalmartCaTest.OnboardTest -->
     </classes>
