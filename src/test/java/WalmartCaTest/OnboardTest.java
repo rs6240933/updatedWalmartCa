@@ -46,7 +46,7 @@ public class OnboardTest extends Baseclass {
 	public void verifyContactUS() {
 		String ExpectedURL = "https://walmart-support.cedcommerce.com/support/tickets/new";
 		String actualURL = obj1.openContactUs();
-		//Assert.assertTrue(actualURL.contains(ExpectedURL),
+		Assert.assertTrue(actualURL.contains(ExpectedURL),
 				"Wron URl is opened Expected : " + ExpectedURL + " Actual URL " + actualURL);
 	}
 
